@@ -159,6 +159,7 @@ export const sectionIndex = (id) => String(pageOf(id).sections.indexOf(id) + 1).
 // puis passer `ready: true`.
 export const PHOTOS = {
   portrait: {
+    ready: true,
     title: 'Portrait officiel du Dr Delikan',
     format: 'Vertical 4:5',
     brief:

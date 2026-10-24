@@ -119,3 +119,8 @@
   flex-shrink: 0;
   filter: drop-shadow(0 0 6px rgba(191, 159, 108, 0.45));
 }
+
+/* Portrait du praticien : le visage reste dans le cadre, quel que soit le format. */
+.docteur__portrait img {
+  object-position: center 18%;
+}
