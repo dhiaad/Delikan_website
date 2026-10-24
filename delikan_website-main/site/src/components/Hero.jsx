@@ -7,15 +7,19 @@ import { Button } from './Button'
 import { Calendar, Clock, Phone, Pin } from './Icons'
 import Picture from './Picture'
 import { Mandible } from './Engravings'
-import { MQ } from '../smoothScroll'
+import { MQ, scrollToId } from '../smoothScroll'
 
-// L'essentiel d'abord : qui, quels diplômes, où, quand, comment prendre rendez-vous.
+// L'essentiel d'abord : qui, pour quels soins, où, quand, comment prendre rendez-vous.
 export default function Hero({ ready }) {
   const root = useRef(null)
   const tl = useRef(null)
   // Horaires du jour, calculés côté visiteur. getDay() : 0 = dimanche ; HOURS commence au lundi.
   const [today, setToday] = useState(null)
   useEffect(() => setToday(HOURS[(new Date().getDay() + 6) % 7]), [])
+  const toSoins = (e) => {
+    e.preventDefault()
+    scrollToId('soins')
+  }
 
   useGSAP(
     () => {
@@ -27,7 +31,7 @@ export default function Hero({ ready }) {
           .timeline({ paused: true, defaults: { ease: 'expo.out' }, onComplete: () => title.revert() })
           .from(title.lines, { yPercent: 110, duration: 1.3, stagger: 0.1 })
           .from('.hero__kicker', { y: 16, opacity: 0, duration: 0.9, stagger: 0.1 }, 0.3)
-          .from('.hero__cred', { y: 22, opacity: 0, duration: 1, stagger: 0.08 }, 0.45)
+          .from('.hero__row > *', { y: 22, opacity: 0, duration: 1, stagger: 0.08 }, 0.45)
           .from('.hero__rule', { scaleX: 0, duration: 1.2, ease: 'expo.inOut' }, 0.5)
           .from('.hero__info > *', { y: 22, opacity: 0, duration: 1, stagger: 0.07 }, 0.65)
           .from('.hero__frame', { yPercent: 10, opacity: 0, duration: 1.4 }, 0.7)
@@ -65,7 +69,7 @@ export default function Hero({ ready }) {
   return (
     <section className="hero" id="top" ref={root}>
       <div className="hero__top container">
-        <p className="hero__kicker">Cabinet de chirurgie dentaire</p>
+        <p className="hero__kicker">Implantologie · Chirurgie orale · Soins dentaires</p>
         <p className="hero__kicker hero__kicker--right">Saint-Estève · Pyrénées-Orientales</p>
       </div>
 
@@ -75,30 +79,20 @@ export default function Hero({ ready }) {
           {CABINET.doctor}, <em>chirurgien-dentiste.</em>
         </h1>
 
-        {/* Diplômes et titres, mis en avant dès le premier écran. */}
-        <ul className="hero__creds" aria-label="Diplômes et qualifications">
-          <li className="hero__cred hero__cred--main">
-            <span className="hero__cred-sigle"><span>4</span></span>
-            <span>
-              <strong>Implantologie &amp; parodontologie</strong>
-              <small>3 D.U. et 1 C.E.S. · Lyon, Nantes, Créteil</small>
-            </span>
-          </li>
-          <li className="hero__cred">
-            <span className="hero__cred-sigle"><span>CD</span></span>
-            <span>
-              <strong>Chirurgien-dentiste</strong>
-              <small>Inscrit à l’Ordre · RPPS {CABINET.rpps}</small>
-            </span>
-          </li>
-          <li className="hero__cred">
-            <span className="hero__cred-sigle"><span>AM</span></span>
-            <span>
-              <strong>Conventionné</strong>
-              <small>Assurance Maladie</small>
-            </span>
-          </li>
-        </ul>
+        <div className="hero__row">
+          <p className="hero__lead">
+            L’implantologie et la chirurgie orale au cœur de la pratique, et tous les soins dentaires pour la famille,
+            dans un cabinet où l’on prend le temps d’expliquer.
+          </p>
+          <div className="hero__ctas">
+            <Button href={CABINET.doctolib} external magnetic size="lg" icon={<Calendar />}>
+              Prendre rendez-vous
+            </Button>
+            <Button href="#soins" variant="line" size="lg" onClick={toSoins}>
+              Découvrir les soins
+            </Button>
+          </div>
+        </div>
 
         <span className="hero__rule" aria-hidden />
 
@@ -128,21 +122,16 @@ export default function Hero({ ready }) {
               <span>Secrétariat</span>
             </span>
           </a>
-          <div className="hero__ctas">
-            <Button href={CABINET.doctolib} external magnetic size="lg" icon={<Calendar />}>
-              Prendre rendez-vous
-            </Button>
-          </div>
         </div>
       </div>
 
       <div className="hero__media">
         <div className="hero__frame">
           <div className="hero__media-inner">
-            <Picture name="attente" alt="La salle d’attente du cabinet dentaire" eager sizes="100vw" />
+            <Picture name="hero" alt="Le Dr Delikan en consultation" eager sizes="100vw" />
           </div>
           <div className="hero__caption">
-            <span>La salle d’attente</span>
+            <span>Au cabinet</span>
             <span>{CABINET.street}, Saint-Estève</span>
           </div>
         </div>

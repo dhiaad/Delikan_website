@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import { gsap } from 'gsap'
 import { useGSAP } from '@gsap/react'
-import { ETAPES } from '../data'
+import { ETAPES, sectionIndex } from '../data'
 import { Heading, Label, Fade } from './Heading'
 import { MQ } from '../smoothScroll'
 import { Implant } from './Engravings'
@@ -47,7 +47,7 @@ export default function Etapes() {
       <Implant className="bg-plate bg-plate--etapes" />
       <div className="container etapes__grid">
         <div className="etapes__head">
-          <Label index="06">Première visite</Label>
+          <Label index={sectionIndex('etapes')}>Première visite</Label>
           <Heading className="h2">
             Simple, <em>du début à la fin.</em>
           </Heading>

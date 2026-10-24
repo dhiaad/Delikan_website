@@ -10,7 +10,10 @@ import Hero from './components/Hero'
 import About from './components/About'
 import Soins from './components/Soins'
 import Visite from './components/Visite'
-import Diplomes from './components/Diplomes'
+import Docteur from './components/Docteur'
+import Focus from './components/Focus'
+import Engagements from './components/Engagements'
+import Faq from './components/Faq'
 import Etapes from './components/Etapes'
 import Infos from './components/Infos'
 import Footer from './components/Footer'
@@ -50,20 +53,23 @@ export default function App() {
   return (
     <MotionConfig reducedMotion="user">
       <LazyMotion features={domAnimation} strict>
-        <a className="skip" href="#diplomes">
+        <a className="skip" href="#cabinet">
           Aller au contenu
         </a>
         <Intro onReveal={onReveal} />
         <Nav />
         <main>
-          {/* L'essentiel en haut (diplômes, images, adresse), les textes longs ensuite. */}
+          {/* Parcours du patient : le cabinet, les soins, le praticien, les lieux, puis tout pour venir. */}
           <Hero ready={ready} />
-          <Diplomes />
-          <Visite />
-          <Infos />
-          <Soins />
           <About />
+          <Soins />
+          <Focus />
+          <Docteur />
+          <Visite />
+          <Engagements />
           <Etapes />
+          <Faq />
+          <Infos />
         </main>
         <Footer />
         <MobileBar />

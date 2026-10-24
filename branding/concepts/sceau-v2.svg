@@ -1,0 +1,238 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1600" height="984" viewBox="0 0 1600 984"><rect width="1600" height="984" fill="#f7f7f4"/><text x="60" y="78" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="40" font-weight="700" fill="#161616">Le Sceau — version allégée</text><text x="60" y="116" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="20" fill="#6b6b6b">Avant / après</text><rect x="60" y="150" width="726" height="774" rx="18" fill="#fff" stroke="#e4e4e0" stroke-width="1"/><g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="90" y="190" width="666" height="300" preserveAspectRatio="xMidYMid meet">
+  <!-- A — Le Sceau. Exploration : textes en <text>, à vectoriser pour la version finale. -->
+  <defs>
+    <path id="c0-ring" d="M 128 128 m -97 0 a 97 97 0 1 1 194 0 a 97 97 0 1 1 -194 0" />
+  </defs>
+  <circle cx="128" cy="128" r="124" fill="#15120f" />
+  <circle cx="128" cy="128" r="117" fill="none" stroke="#c2a06b" stroke-width="2.5" />
+  <circle cx="128" cy="128" r="111" fill="none" stroke="#c2a06b" stroke-width="0.8" />
+  <circle cx="128" cy="128" r="80" fill="none" stroke="#c2a06b" stroke-width="0.8" />
+  <text font-family="'Bodoni MT', Didot, serif" font-size="13.5" letter-spacing="4.2" fill="#c2a06b">
+    <textPath href="#c0-ring" startOffset="0">CABINET DELIKAN · SAINT-ESTÈVE · IMPLANTOLOGIE ·</textPath>
+  </text>
+  <!-- Monogramme iD : le point du i devient un losange d'or. -->
+  <text x="137" y="160" text-anchor="middle" font-family="'Bodoni MT', Didot, serif" font-size="92" fill="#f3ece0">ıD</text>
+  <path d="M 98.5 80 L 104.5 88 L 98.5 96 L 92.5 88 Z" fill="#c2a06b" />
+  <line x1="98" y1="178" x2="158" y2="178" stroke="#c2a06b" stroke-width="0.8" />
+  <text x="128" y="193" text-anchor="middle" font-family="'Bodoni MT', Didot, serif" font-size="9" letter-spacing="3" fill="#c2a06b">66240</text>
+</svg>
+</g><g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 256" x="90" y="514" width="666" height="120" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <path id="l0-ring2" d="M 128 128 m -97 0 a 97 97 0 1 1 194 0 a 97 97 0 1 1 -194 0" />
+  </defs>
+  <rect width="760" height="256" fill="#15120f" />
+  <g transform="translate(20 0)">
+    <circle cx="128" cy="128" r="117" fill="none" stroke="#c2a06b" stroke-width="2.5" />
+    <circle cx="128" cy="128" r="111" fill="none" stroke="#c2a06b" stroke-width="0.8" />
+    <circle cx="128" cy="128" r="80" fill="none" stroke="#c2a06b" stroke-width="0.8" />
+    <text font-family="'Bodoni MT', Didot, serif" font-size="13.5" letter-spacing="4.2" fill="#c2a06b">
+      <textPath href="#l0-ring2">CABINET DELIKAN · SAINT-ESTÈVE · IMPLANTOLOGIE ·</textPath>
+    </text>
+    <text x="137" y="160" text-anchor="middle" font-family="'Bodoni MT', Didot, serif" font-size="92" fill="#f3ece0">ıD</text>
+    <path d="M 98.5 80 L 104.5 88 L 98.5 96 L 92.5 88 Z" fill="#c2a06b" />
+  </g>
+  <line x1="300" y1="70" x2="300" y2="186" stroke="#c2a06b" stroke-width="1" />
+  <text x="336" y="104" font-family="'Bodoni MT', Didot, serif" font-size="15" letter-spacing="9" fill="#c2a06b">CABINET</text>
+  <text x="332" y="160" font-family="'Bodoni MT', Didot, serif" font-size="58" letter-spacing="14" fill="#f3ece0">DELIKAN</text>
+  <text x="336" y="190" font-family="'Segoe UI', Arial, sans-serif" font-weight="300" font-size="11.5" letter-spacing="4.5" fill="#bfb3a2">IMPLANTOLOGIE · CHIRURGIE ORALE</text>
+</svg>
+</g><g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="90" y="660" width="64" height="64" preserveAspectRatio="xMidYMid meet">
+  <!-- A — Le Sceau. Exploration : textes en <text>, à vectoriser pour la version finale. -->
+  <defs>
+    <path id="s064-ring" d="M 128 128 m -97 0 a 97 97 0 1 1 194 0 a 97 97 0 1 1 -194 0" />
+  </defs>
+  <circle cx="128" cy="128" r="124" fill="#15120f" />
+  <circle cx="128" cy="128" r="117" fill="none" stroke="#c2a06b" stroke-width="2.5" />
+  <circle cx="128" cy="128" r="111" fill="none" stroke="#c2a06b" stroke-width="0.8" />
+  <circle cx="128" cy="128" r="80" fill="none" stroke="#c2a06b" stroke-width="0.8" />
+  <text font-family="'Bodoni MT', Didot, serif" font-size="13.5" letter-spacing="4.2" fill="#c2a06b">
+    <textPath href="#s064-ring" startOffset="0">CABINET DELIKAN · SAINT-ESTÈVE · IMPLANTOLOGIE ·</textPath>
+  </text>
+  <!-- Monogramme iD : le point du i devient un losange d'or. -->
+  <text x="137" y="160" text-anchor="middle" font-family="'Bodoni MT', Didot, serif" font-size="92" fill="#f3ece0">ıD</text>
+  <path d="M 98.5 80 L 104.5 88 L 98.5 96 L 92.5 88 Z" fill="#c2a06b" />
+  <line x1="98" y1="178" x2="158" y2="178" stroke="#c2a06b" stroke-width="0.8" />
+  <text x="128" y="193" text-anchor="middle" font-family="'Bodoni MT', Didot, serif" font-size="9" letter-spacing="3" fill="#c2a06b">66240</text>
+</svg>
+</g><text x="122" y="744" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">64px</text><g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="180" y="692" width="32" height="32" preserveAspectRatio="xMidYMid meet">
+  <!-- A — Le Sceau. Exploration : textes en <text>, à vectoriser pour la version finale. -->
+  <defs>
+    <path id="s032-ring" d="M 128 128 m -97 0 a 97 97 0 1 1 194 0 a 97 97 0 1 1 -194 0" />
+  </defs>
+  <circle cx="128" cy="128" r="124" fill="#15120f" />
+  <circle cx="128" cy="128" r="117" fill="none" stroke="#c2a06b" stroke-width="2.5" />
+  <circle cx="128" cy="128" r="111" fill="none" stroke="#c2a06b" stroke-width="0.8" />
+  <circle cx="128" cy="128" r="80" fill="none" stroke="#c2a06b" stroke-width="0.8" />
+  <text font-family="'Bodoni MT', Didot, serif" font-size="13.5" letter-spacing="4.2" fill="#c2a06b">
+    <textPath href="#s032-ring" startOffset="0">CABINET DELIKAN · SAINT-ESTÈVE · IMPLANTOLOGIE ·</textPath>
+  </text>
+  <!-- Monogramme iD : le point du i devient un losange d'or. -->
+  <text x="137" y="160" text-anchor="middle" font-family="'Bodoni MT', Didot, serif" font-size="92" fill="#f3ece0">ıD</text>
+  <path d="M 98.5 80 L 104.5 88 L 98.5 96 L 92.5 88 Z" fill="#c2a06b" />
+  <line x1="98" y1="178" x2="158" y2="178" stroke="#c2a06b" stroke-width="0.8" />
+  <text x="128" y="193" text-anchor="middle" font-family="'Bodoni MT', Didot, serif" font-size="9" letter-spacing="3" fill="#c2a06b">66240</text>
+</svg>
+</g><text x="196" y="744" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">32px</text><g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="238" y="708" width="16" height="16" preserveAspectRatio="xMidYMid meet">
+  <!-- A — Le Sceau. Exploration : textes en <text>, à vectoriser pour la version finale. -->
+  <defs>
+    <path id="s016-ring" d="M 128 128 m -97 0 a 97 97 0 1 1 194 0 a 97 97 0 1 1 -194 0" />
+  </defs>
+  <circle cx="128" cy="128" r="124" fill="#15120f" />
+  <circle cx="128" cy="128" r="117" fill="none" stroke="#c2a06b" stroke-width="2.5" />
+  <circle cx="128" cy="128" r="111" fill="none" stroke="#c2a06b" stroke-width="0.8" />
+  <circle cx="128" cy="128" r="80" fill="none" stroke="#c2a06b" stroke-width="0.8" />
+  <text font-family="'Bodoni MT', Didot, serif" font-size="13.5" letter-spacing="4.2" fill="#c2a06b">
+    <textPath href="#s016-ring" startOffset="0">CABINET DELIKAN · SAINT-ESTÈVE · IMPLANTOLOGIE ·</textPath>
+  </text>
+  <!-- Monogramme iD : le point du i devient un losange d'or. -->
+  <text x="137" y="160" text-anchor="middle" font-family="'Bodoni MT', Didot, serif" font-size="92" fill="#f3ece0">ıD</text>
+  <path d="M 98.5 80 L 104.5 88 L 98.5 96 L 92.5 88 Z" fill="#c2a06b" />
+  <line x1="98" y1="178" x2="158" y2="178" stroke="#c2a06b" stroke-width="0.8" />
+  <text x="128" y="193" text-anchor="middle" font-family="'Bodoni MT', Didot, serif" font-size="9" letter-spacing="3" fill="#c2a06b">66240</text>
+</svg>
+</g><text x="246" y="744" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">16px</text><text x="90.0" y="780" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="26" font-weight="700" fill="#161616">A · Avant</text><text x="90.0" y="814" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#555">Première version, trop chargée.</text><rect x="814" y="150" width="726" height="774" rx="18" fill="#fff" stroke="#161616" stroke-width="2"/><g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="844" y="190" width="666" height="300" preserveAspectRatio="xMidYMid meet">
+  <!-- A — Le Sceau, v2 allégée. Exploration : textes en <text>, à vectoriser pour la version finale. -->
+  <defs>
+    <!-- Arc du haut (gauche → droite par le haut) et arc du bas (gauche → droite par le bas) : les deux textes se lisent à l'endroit. -->
+    <path id="c1-arc-top" d="M 30 128 A 98 98 0 0 1 226 128" />
+    <path id="c1-arc-bottom" d="M 21 128 A 107 107 0 0 0 235 128" />
+  </defs>
+  <circle cx="128" cy="128" r="124" fill="#15120f" />
+  <circle cx="128" cy="128" r="117" fill="none" stroke="#c2a06b" stroke-width="2.5" />
+  <circle cx="128" cy="128" r="83" fill="none" stroke="#c2a06b" stroke-width="0.8" />
+
+  <text font-family="'Bodoni MT', Didot, serif" font-size="14" letter-spacing="5" fill="#c2a06b" text-anchor="middle">
+    <textPath href="#c1-arc-top" startOffset="50%">IBRAHIM DELIKAN</textPath>
+  </text>
+  <text font-family="'Bodoni MT', Didot, serif" font-size="11" letter-spacing="4.5" fill="#c2a06b" text-anchor="middle">
+    <textPath href="#c1-arc-bottom" startOffset="50%">IMPLANTOLOGIE</textPath>
+  </text>
+  <!-- Repères à 9 h et 3 h. -->
+  <circle cx="28" cy="128" r="2.2" fill="#c2a06b" />
+  <circle cx="228" cy="128" r="2.2" fill="#c2a06b" />
+
+  <!-- Monogramme iD : le point du i est la dent d'or du logo d'origine. -->
+  <text x="137" y="150" text-anchor="middle" font-family="'Bodoni MT', Didot, serif" font-size="92" fill="#f3ece0">ıD</text>
+  <path transform="translate(91.3 79) scale(0.9)" fill="#c2a06b"
+    d="M4 0C1.5 0 0 2 0 5c0 3 1 4.5 1.6 8 .5 3 .8 8 2.4 8 1.5 0 1.6-4 2.3-6.2.4-1.2.9-1.8 1.7-1.8s1.3.6 1.7 1.8c.7 2.2.8 6.2 2.3 6.2 1.6 0 1.9-5 2.4-8C15 9.5 16 8 16 5c0-3-1.5-5-4-5-1.7 0-2.6.8-4 .8S5.7 0 4 0z" />
+  <line x1="104" y1="165" x2="152" y2="165" stroke="#c2a06b" stroke-width="0.8" />
+  <text x="128" y="180" text-anchor="middle" font-family="'Bodoni MT', Didot, serif" font-size="7.6" letter-spacing="2.2" fill="#c2a06b">CABINET DENTAIRE</text>
+</svg>
+</g><g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 256" x="844" y="514" width="666" height="120" preserveAspectRatio="xMidYMid meet">
+  <rect width="800" height="256" fill="#15120f" />
+  <g transform="translate(16 0)">
+  <defs>
+    <!-- Arc du haut (gauche → droite par le haut) et arc du bas (gauche → droite par le bas) : les deux textes se lisent à l'endroit. -->
+    <path id="l1-l-top" d="M 30 128 A 98 98 0 0 1 226 128" />
+    <path id="l1-l-bottom" d="M 21 128 A 107 107 0 0 0 235 128" />
+  </defs>
+    <circle cx="128" cy="128" r="117" fill="none" stroke="#c2a06b" stroke-width="2.5" />
+  <circle cx="128" cy="128" r="83" fill="none" stroke="#c2a06b" stroke-width="0.8" />
+
+  <text font-family="'Bodoni MT', Didot, serif" font-size="14" letter-spacing="5" fill="#c2a06b" text-anchor="middle">
+    <textPath href="#l1-l-top" startOffset="50%">IBRAHIM DELIKAN</textPath>
+  </text>
+  <text font-family="'Bodoni MT', Didot, serif" font-size="11" letter-spacing="4.5" fill="#c2a06b" text-anchor="middle">
+    <textPath href="#l1-l-bottom" startOffset="50%">IMPLANTOLOGIE</textPath>
+  </text>
+  <!-- Repères à 9 h et 3 h. -->
+  <circle cx="28" cy="128" r="2.2" fill="#c2a06b" />
+  <circle cx="228" cy="128" r="2.2" fill="#c2a06b" />
+
+  <!-- Monogramme iD : le point du i est la dent d'or du logo d'origine. -->
+  <text x="137" y="150" text-anchor="middle" font-family="'Bodoni MT', Didot, serif" font-size="92" fill="#f3ece0">ıD</text>
+  <path transform="translate(91.3 79) scale(0.9)" fill="#c2a06b"
+    d="M4 0C1.5 0 0 2 0 5c0 3 1 4.5 1.6 8 .5 3 .8 8 2.4 8 1.5 0 1.6-4 2.3-6.2.4-1.2.9-1.8 1.7-1.8s1.3.6 1.7 1.8c.7 2.2.8 6.2 2.3 6.2 1.6 0 1.9-5 2.4-8C15 9.5 16 8 16 5c0-3-1.5-5-4-5-1.7 0-2.6.8-4 .8S5.7 0 4 0z" />
+  <line x1="104" y1="165" x2="152" y2="165" stroke="#c2a06b" stroke-width="0.8" />
+  <text x="128" y="180" text-anchor="middle" font-family="'Bodoni MT', Didot, serif" font-size="7.6" letter-spacing="2.2" fill="#c2a06b">CABINET DENTAIRE</text>
+  </g>
+  <line x1="304" y1="72" x2="304" y2="184" stroke="#c2a06b" stroke-width="1" />
+  <text x="336" y="100" font-family="'Bodoni MT', Didot, serif" font-size="13" letter-spacing="8" fill="#c2a06b">CABINET DENTAIRE</text>
+  <text x="333" y="148" font-family="'Bodoni MT', Didot, serif" font-size="33" letter-spacing="5" fill="#f3ece0">IBRAHIM DELIKAN</text>
+  <text x="336" y="180" font-family="'Segoe UI', Arial, sans-serif" font-weight="300" font-size="11" letter-spacing="4.5" fill="#bfb3a2">IMPLANTOLOGIE · CHIRURGIE ORALE</text>
+</svg>
+</g><g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="844" y="660" width="64" height="64" preserveAspectRatio="xMidYMid meet">
+  <!-- A — Le Sceau, v2 allégée. Exploration : textes en <text>, à vectoriser pour la version finale. -->
+  <defs>
+    <!-- Arc du haut (gauche → droite par le haut) et arc du bas (gauche → droite par le bas) : les deux textes se lisent à l'endroit. -->
+    <path id="s164-arc-top" d="M 30 128 A 98 98 0 0 1 226 128" />
+    <path id="s164-arc-bottom" d="M 21 128 A 107 107 0 0 0 235 128" />
+  </defs>
+  <circle cx="128" cy="128" r="124" fill="#15120f" />
+  <circle cx="128" cy="128" r="117" fill="none" stroke="#c2a06b" stroke-width="2.5" />
+  <circle cx="128" cy="128" r="83" fill="none" stroke="#c2a06b" stroke-width="0.8" />
+
+  <text font-family="'Bodoni MT', Didot, serif" font-size="14" letter-spacing="5" fill="#c2a06b" text-anchor="middle">
+    <textPath href="#s164-arc-top" startOffset="50%">IBRAHIM DELIKAN</textPath>
+  </text>
+  <text font-family="'Bodoni MT', Didot, serif" font-size="11" letter-spacing="4.5" fill="#c2a06b" text-anchor="middle">
+    <textPath href="#s164-arc-bottom" startOffset="50%">IMPLANTOLOGIE</textPath>
+  </text>
+  <!-- Repères à 9 h et 3 h. -->
+  <circle cx="28" cy="128" r="2.2" fill="#c2a06b" />
+  <circle cx="228" cy="128" r="2.2" fill="#c2a06b" />
+
+  <!-- Monogramme iD : le point du i est la dent d'or du logo d'origine. -->
+  <text x="137" y="150" text-anchor="middle" font-family="'Bodoni MT', Didot, serif" font-size="92" fill="#f3ece0">ıD</text>
+  <path transform="translate(91.3 79) scale(0.9)" fill="#c2a06b"
+    d="M4 0C1.5 0 0 2 0 5c0 3 1 4.5 1.6 8 .5 3 .8 8 2.4 8 1.5 0 1.6-4 2.3-6.2.4-1.2.9-1.8 1.7-1.8s1.3.6 1.7 1.8c.7 2.2.8 6.2 2.3 6.2 1.6 0 1.9-5 2.4-8C15 9.5 16 8 16 5c0-3-1.5-5-4-5-1.7 0-2.6.8-4 .8S5.7 0 4 0z" />
+  <line x1="104" y1="165" x2="152" y2="165" stroke="#c2a06b" stroke-width="0.8" />
+  <text x="128" y="180" text-anchor="middle" font-family="'Bodoni MT', Didot, serif" font-size="7.6" letter-spacing="2.2" fill="#c2a06b">CABINET DENTAIRE</text>
+</svg>
+</g><text x="876" y="744" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">64px</text><g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="934" y="692" width="32" height="32" preserveAspectRatio="xMidYMid meet">
+  <!-- A — Le Sceau, v2 allégée. Exploration : textes en <text>, à vectoriser pour la version finale. -->
+  <defs>
+    <!-- Arc du haut (gauche → droite par le haut) et arc du bas (gauche → droite par le bas) : les deux textes se lisent à l'endroit. -->
+    <path id="s132-arc-top" d="M 30 128 A 98 98 0 0 1 226 128" />
+    <path id="s132-arc-bottom" d="M 21 128 A 107 107 0 0 0 235 128" />
+  </defs>
+  <circle cx="128" cy="128" r="124" fill="#15120f" />
+  <circle cx="128" cy="128" r="117" fill="none" stroke="#c2a06b" stroke-width="2.5" />
+  <circle cx="128" cy="128" r="83" fill="none" stroke="#c2a06b" stroke-width="0.8" />
+
+  <text font-family="'Bodoni MT', Didot, serif" font-size="14" letter-spacing="5" fill="#c2a06b" text-anchor="middle">
+    <textPath href="#s132-arc-top" startOffset="50%">IBRAHIM DELIKAN</textPath>
+  </text>
+  <text font-family="'Bodoni MT', Didot, serif" font-size="11" letter-spacing="4.5" fill="#c2a06b" text-anchor="middle">
+    <textPath href="#s132-arc-bottom" startOffset="50%">IMPLANTOLOGIE</textPath>
+  </text>
+  <!-- Repères à 9 h et 3 h. -->
+  <circle cx="28" cy="128" r="2.2" fill="#c2a06b" />
+  <circle cx="228" cy="128" r="2.2" fill="#c2a06b" />
+
+  <!-- Monogramme iD : le point du i est la dent d'or du logo d'origine. -->
+  <text x="137" y="150" text-anchor="middle" font-family="'Bodoni MT', Didot, serif" font-size="92" fill="#f3ece0">ıD</text>
+  <path transform="translate(91.3 79) scale(0.9)" fill="#c2a06b"
+    d="M4 0C1.5 0 0 2 0 5c0 3 1 4.5 1.6 8 .5 3 .8 8 2.4 8 1.5 0 1.6-4 2.3-6.2.4-1.2.9-1.8 1.7-1.8s1.3.6 1.7 1.8c.7 2.2.8 6.2 2.3 6.2 1.6 0 1.9-5 2.4-8C15 9.5 16 8 16 5c0-3-1.5-5-4-5-1.7 0-2.6.8-4 .8S5.7 0 4 0z" />
+  <line x1="104" y1="165" x2="152" y2="165" stroke="#c2a06b" stroke-width="0.8" />
+  <text x="128" y="180" text-anchor="middle" font-family="'Bodoni MT', Didot, serif" font-size="7.6" letter-spacing="2.2" fill="#c2a06b">CABINET DENTAIRE</text>
+</svg>
+</g><text x="950" y="744" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">32px</text><g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="992" y="708" width="16" height="16" preserveAspectRatio="xMidYMid meet">
+  <!-- A — Le Sceau, v2 allégée. Exploration : textes en <text>, à vectoriser pour la version finale. -->
+  <defs>
+    <!-- Arc du haut (gauche → droite par le haut) et arc du bas (gauche → droite par le bas) : les deux textes se lisent à l'endroit. -->
+    <path id="s116-arc-top" d="M 30 128 A 98 98 0 0 1 226 128" />
+    <path id="s116-arc-bottom" d="M 21 128 A 107 107 0 0 0 235 128" />
+  </defs>
+  <circle cx="128" cy="128" r="124" fill="#15120f" />
+  <circle cx="128" cy="128" r="117" fill="none" stroke="#c2a06b" stroke-width="2.5" />
+  <circle cx="128" cy="128" r="83" fill="none" stroke="#c2a06b" stroke-width="0.8" />
+
+  <text font-family="'Bodoni MT', Didot, serif" font-size="14" letter-spacing="5" fill="#c2a06b" text-anchor="middle">
+    <textPath href="#s116-arc-top" startOffset="50%">IBRAHIM DELIKAN</textPath>
+  </text>
+  <text font-family="'Bodoni MT', Didot, serif" font-size="11" letter-spacing="4.5" fill="#c2a06b" text-anchor="middle">
+    <textPath href="#s116-arc-bottom" startOffset="50%">IMPLANTOLOGIE</textPath>
+  </text>
+  <!-- Repères à 9 h et 3 h. -->
+  <circle cx="28" cy="128" r="2.2" fill="#c2a06b" />
+  <circle cx="228" cy="128" r="2.2" fill="#c2a06b" />
+
+  <!-- Monogramme iD : le point du i est la dent d'or du logo d'origine. -->
+  <text x="137" y="150" text-anchor="middle" font-family="'Bodoni MT', Didot, serif" font-size="92" fill="#f3ece0">ıD</text>
+  <path transform="translate(91.3 79) scale(0.9)" fill="#c2a06b"
+    d="M4 0C1.5 0 0 2 0 5c0 3 1 4.5 1.6 8 .5 3 .8 8 2.4 8 1.5 0 1.6-4 2.3-6.2.4-1.2.9-1.8 1.7-1.8s1.3.6 1.7 1.8c.7 2.2.8 6.2 2.3 6.2 1.6 0 1.9-5 2.4-8C15 9.5 16 8 16 5c0-3-1.5-5-4-5-1.7 0-2.6.8-4 .8S5.7 0 4 0z" />
+  <line x1="104" y1="165" x2="152" y2="165" stroke="#c2a06b" stroke-width="0.8" />
+  <text x="128" y="180" text-anchor="middle" font-family="'Bodoni MT', Didot, serif" font-size="7.6" letter-spacing="2.2" fill="#c2a06b">CABINET DENTAIRE</text>
+</svg>
+</g><text x="1000" y="744" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">16px</text><text x="844.0" y="780" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="26" font-weight="700" fill="#161616">B · Le Sceau · v2</text><text x="844.0" y="808" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#161616" letter-spacing="1.5">RECOMMENDED</text><text x="844.0" y="842" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#555">Allégé : Ibrahim Delikan en haut, la dent d&#x27;or sur le i, « Cabinet</text><text x="844.0" y="868" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#555">dentaire » au centre.</text></svg>

@@ -1,21 +1,24 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import * as m from 'motion/react-m'
 import { AnimatePresence } from 'motion/react'
-import { CABINET, SECTIONS } from '../data'
+import { CABINET, GROUPS, HOURS, SECTIONS } from '../data'
 import { Logo } from './Logo'
-import { Mandible } from './Engravings'
+import { Calendar, Clock, Phone, Pin } from './Icons'
 import { scrollToId, setScrollLocked } from '../smoothScroll'
 
 const ease = [0.76, 0, 0.24, 1]
 const pad = (n) => String(n).padStart(2, '0')
 
 // Navigation éditoriale : « Menu » à gauche, logo au centre, rendez-vous à droite,
-// sommaire plein écran façon table des matières, et repère de section sur le côté.
+// sommaire plein écran regroupé par étapes du parcours, avec contact direct, et repère de section sur le côté.
 export default function Nav() {
   const [hidden, setHidden] = useState(false)
   const [solid, setSolid] = useState(false)
+  const bar = useRef(null)
   const [open, setOpen] = useState(false)
   const [active, setActive] = useState(null)
+  const [today, setToday] = useState(null)
+  useEffect(() => setToday(HOURS[(new Date().getDay() + 6) % 7]), [])
 
   // Se masque en descendant, réapparaît dès qu'on remonte.
   useEffect(() => {
@@ -23,6 +26,9 @@ export default function Nav() {
     const onScroll = () => {
       const y = window.scrollY
       setSolid(y > 30)
+      // Barre de lecture : progression dans la page, sans re-rendu.
+      const max = document.documentElement.scrollHeight - window.innerHeight
+      bar.current?.style.setProperty('--p', max > 0 ? Math.min(1, y / max) : 0)
       setHidden(y > window.innerHeight * 0.8 && y > last + 2)
       if (y < last - 2) setHidden(false)
       last = y
@@ -77,7 +83,7 @@ export default function Nav() {
               <span />
               <span />
             </span>
-            <span className="nav__menu-label">{open ? 'Fermer' : 'Sommaire'}</span>
+            <span className="nav__menu-label">{open ? 'Fermer' : 'Menu'}</span>
           </button>
 
           <a href="#top" className="brand" onClick={go('top')} aria-label="Cabinet Delikan, retour en haut">
@@ -93,6 +99,7 @@ export default function Nav() {
             </a>
           </div>
         </div>
+        <span className="nav__progress" ref={bar} aria-hidden />
       </header>
 
       {/* Repère de section, sur le bord gauche (grand écran). */}
@@ -115,53 +122,84 @@ export default function Nav() {
         {open && (
           <m.div
             className="menu"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Sommaire du site"
             initial={{ clipPath: 'inset(0% 0% 100% 0%)' }}
             animate={{ clipPath: 'inset(0% 0% 0% 0%)' }}
             exit={{ clipPath: 'inset(0% 0% 100% 0%)' }}
             transition={{ duration: 0.8, ease }}
           >
             <div className="menu__grid">
-              <div>
-                <p className="menu__kicker">Sommaire</p>
-                <ol className="menu__list">
-                  {SECTIONS.map((s, i) => (
-                    <li key={s.id}>
-                      <span className="mask">
-                        <m.a
-                          href={`#${s.id}`}
-                          onClick={go(s.id)}
-                          className={active === s.id ? 'is-active' : ''}
-                          initial={{ y: '110%' }}
-                          animate={{ y: '0%' }}
-                          exit={{ y: '110%', transition: { duration: 0.35, ease } }}
-                          transition={{ delay: 0.3 + i * 0.06, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-                        >
-                          <small>{['I', 'II', 'III', 'IV', 'V', 'VI'][i]}</small>
-                          {s.label}
-                        </m.a>
-                      </span>
-                    </li>
-                  ))}
-                </ol>
-              </div>
+              <nav className="menu__groups" aria-label="Sommaire">
+                {GROUPS.map((g, gi) => (
+                  <m.div
+                    key={g.id}
+                    className="menu__group"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, transition: { duration: 0.2 } }}
+                    transition={{ delay: 0.3 + gi * 0.1, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+                  >
+                    <p className="menu__kicker">{g.label}</p>
+                    <ol className="menu__list">
+                      {SECTIONS.map((s, i) =>
+                        s.group !== g.id ? null : (
+                          <li key={s.id}>
+                            <a
+                              href={`#${s.id}`}
+                              onClick={go(s.id)}
+                              className={active === s.id ? 'is-active' : ''}
+                              aria-current={active === s.id ? 'true' : undefined}
+                            >
+                              <small>{pad(i + 1)}</small>
+                              <span>
+                                <strong>{s.label}</strong>
+                                <em>{s.desc}</em>
+                              </span>
+                            </a>
+                          </li>
+                        ),
+                      )}
+                    </ol>
+                  </m.div>
+                ))}
+              </nav>
 
               <m.aside
                 className="menu__aside"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ delay: 0.45, duration: 0.6 }}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, transition: { duration: 0.2 } }}
+                transition={{ delay: 0.55, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
               >
-                <Mandible className="menu__plate" />
-                <div className="menu__contact">
-                  <a className="menu__book" href={CABINET.doctolib} target="_blank" rel="noreferrer">
-                    Prendre rendez-vous sur Doctolib
-                  </a>
-                  <a href={CABINET.phoneHref}>{CABINET.phone}</a>
+                <p className="menu__kicker">Prendre rendez-vous</p>
+                <a className="menu__book" href={CABINET.doctolib} target="_blank" rel="noreferrer">
+                  <Calendar />
+                  <span>Réserver sur Doctolib</span>
+                  <small>En ligne, à toute heure</small>
+                </a>
+                <a className="menu__line" href={CABINET.phoneHref}>
+                  <Phone />
                   <span>
-                    {CABINET.street}, {CABINET.city}
+                    <strong>{CABINET.phone}</strong>
+                    <small>Secrétariat</small>
+                  </span>
+                </a>
+                <div className="menu__line">
+                  <Clock />
+                  <span>
+                    <strong>{today ? today.time : '8h30 – 13h00'}</strong>
+                    <small>Aujourd’hui · {today ? today.day : 'du lundi au vendredi'}</small>
                   </span>
                 </div>
+                <a className="menu__line" href={CABINET.maps} target="_blank" rel="noreferrer">
+                  <Pin />
+                  <span>
+                    <strong>{CABINET.street}</strong>
+                    <small>{CABINET.city} · Itinéraire</small>
+                  </span>
+                </a>
               </m.aside>
             </div>
           </m.div>

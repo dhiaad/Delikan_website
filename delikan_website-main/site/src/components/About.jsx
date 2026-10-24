@@ -1,18 +1,20 @@
-import { CABINET } from '../data'
+import { CABINET, sectionIndex } from '../data'
 import { Heading, Label, Fade } from './Heading'
 import RevealImage from './RevealImage'
 
 const POINTS = [
-  { k: 'Formation', v: '3 D.U. d’implantologie et un C.E.S. de parodontologie (Lyon, Nantes, Créteil)' },
-  { k: 'Conventionné', v: 'Cabinet conventionné Assurance Maladie' },
-  { k: 'Plateau technique', v: 'Radio panoramique et deux salles de soins' },
+  { k: 'Cœur de pratique', v: 'Implantologie et chirurgie orale' },
+  { k: 'Pour qui', v: 'Toute la famille, des enfants aux seniors' },
+  { k: 'Sur place', v: 'Deux salles de soins et une radio panoramique' },
+  { k: 'Rendez-vous', v: 'En ligne sur Doctolib à toute heure, ou par téléphone' },
+  { k: 'Prise en charge', v: 'Cabinet conventionné Assurance Maladie' },
 ]
 
 export default function About() {
   return (
     <section className="section about" id="cabinet">
       <div className="container">
-        <Label index="05">Le cabinet</Label>
+        <Label index={sectionIndex('cabinet')}>Le cabinet</Label>
         <Heading className="h2 h2--xl about__title">
           Des soins précis, <em>une écoute sincère.</em>
         </Heading>
@@ -28,8 +30,8 @@ export default function About() {
           <div className="about__text">
             <Fade>
               <p className="lead">
-                Installé au {CABINET.street} à Saint-Estève, le {CABINET.doctor} prend en charge toute la famille, des
-                soins courants aux traitements implantaires.
+                Installé au {CABINET.street} à Saint-Estève, le {CABINET.doctor} a placé l’implantologie et la chirurgie
+                orale au cœur de sa pratique, tout en prenant en charge les soins de toute la famille.
               </p>
             </Fade>
             <Fade delay={0.25}>

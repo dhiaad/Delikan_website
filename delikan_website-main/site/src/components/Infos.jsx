@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { CABINET, HOURS } from '../data'
+import { CABINET, HOURS, sectionIndex } from '../data'
 import { Heading, Label, Fade } from './Heading'
 import { Button } from './Button'
 import { Calendar, Phone, Pin } from './Icons'
@@ -12,7 +12,7 @@ export default function Infos() {
   return (
     <section className="section infos" id="infos">
       <div className="container">
-        <Label index="03">Infos pratiques</Label>
+        <Label index={sectionIndex('infos')}>Infos pratiques</Label>
         <Heading className="h2 h2--xl">
           Nous trouver, <em>nous joindre.</em>
         </Heading>
@@ -20,7 +20,10 @@ export default function Infos() {
         <div className="infos__grid">
           <Fade className="infos__col infos__booking">
             <h3 className="h3">Rendez-vous</h3>
-            <p className="muted">Réservez en ligne en quelques clics, ou appelez le secrétariat.</p>
+            <p className="muted">
+              Réservez en ligne en quelques clics, ou appelez le secrétariat. Les consultations se font uniquement sur
+              rendez-vous.
+            </p>
             <div className="infos__buttons">
               <Button href={CABINET.doctolib} external magnetic icon={<Calendar />}>
                 Réserver sur Doctolib
@@ -66,6 +69,9 @@ export default function Infos() {
                 <span>{CABINET.city}</span>
               </span>
               <span className="infos__go">Itinéraire</span>
+            </a>
+            <a className="infos__reviews" href={CABINET.maps} target="_blank" rel="noreferrer">
+              Lire les avis des patients sur Google →
             </a>
           </Fade>
         </div>

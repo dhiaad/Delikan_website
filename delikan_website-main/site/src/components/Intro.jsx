@@ -1,11 +1,8 @@
 import { useRef, useState } from 'react'
 import { gsap } from 'gsap'
-import { MorphSVGPlugin } from 'gsap/MorphSVGPlugin'
 import { useGSAP } from '@gsap/react'
 import { MarkShapes, LOGO_COLORS } from './Logo'
 import { prefersReducedMotion } from '../smoothScroll'
-
-gsap.registerPlugin(MorphSVGPlugin)
 
 const KEY = 'delikan-intro-brossage-2'
 
@@ -17,40 +14,6 @@ const K = 1.25 // taille du monogramme
 const toothPoint = (lx, ly) => ({ x: CX + (-63 + lx * 1.35) * K, y: CY + (-66 + ly * 1.35) * K })
 const TOOTH = toothPoint(8, 10.5) // centre de la dent
 const TOOTH_GLINT = toothPoint(17, -1)
-
-// Scène du sourire : photo fournie par le cabinet (public/media/sourire.webp, 1536 × 1024 px).
-const SX = 800
-const SY = 500
-const IMG = { w: 1536, h: 1024 }
-const S = 900 / IMG.w // échelle image → scène
-const PHOTO = { x: SX - 450, y: SY + 40 - (IMG.h * S) / 2, w: 900, h: IMG.h * S }
-const fromImg = (px, py) => ({ x: PHOTO.x + px * S, y: PHOTO.y + py * S })
-const ANCHOR = fromImg(680, 440) // centre de l'incisive centrale gauche
-
-// Contour de cette incisive dans la photo (pixels). La dent du logo prend exactement cette forme
-// avant le fondu, pour que la photo vienne se caler dessus.
-const INCISOR_PX = [
-  ['M', 597, 430],
-  ['C', 597, 380, 628, 345, 682, 345],
-  ['C', 734, 345, 762, 372, 764, 420],
-  ['L', 764, 505],
-  ['C', 762, 530, 745, 540, 702, 540],
-  ['L', 652, 539],
-  ['C', 612, 537, 597, 522, 597, 494],
-  ['Z'],
-]
-const M = 0.18 // unités du logo par pixel de photo : l'incisive a la taille de la dent du logo
-// Même contour exprimé dans le repère propre de la dent du logo (centre 8 ; 10,5).
-const toothLocal = (px, py) => {
-  const k = M / (1.35 * K)
-  return [(8 + (px - 680) * k).toFixed(3), (10.5 + (py - 440) * k).toFixed(3)]
-}
-const INCISOR_LOCAL = INCISOR_PX.map(([c, ...n]) => {
-  const pts = []
-  for (let i = 0; i < n.length; i += 2) pts.push(...toothLocal(n[i], n[i + 1]))
-  return [c, ...pts].join(' ')
-}).join(' ')
-const GLINT = fromImg(1420, 170)
 
 // Mousse du brossage, autour de la dent (décalages en unités de scène).
 const FOAM = [
@@ -130,12 +93,11 @@ function Toothbrush() {
 }
 
 // Entrée en scène : le logo se dessine, on s'approche de la dent du « i », une brosse la fait passer
-// de l'or au blanc, on plonge dans la dent blanche, et on en ressort sur un sourire dont elle est l'incisive.
+// de l'or au blanc, puis on recule sur le logo complet avant d'entrer sur le site.
 // Jouée une fois par session, jamais avec « réduire les animations », sans bloquer le scroll.
 export default function Intro({ onReveal }) {
   const root = useRef(null)
   const logoSvg = useRef(null)
-  const smileSvg = useRef(null)
   const tl = useRef(null)
   const [play] = useState(shouldPlay)
   const [done, setDone] = useState(!play)
@@ -145,9 +107,6 @@ export default function Intro({ onReveal }) {
   // Cadres de caméra.
   const logoView = view(CX, CY + 40, Math.max(1000, 780 * aspect))
   const brushView = view(TOOTH.x, TOOTH.y, portrait ? 70 : Math.max(120, 70 * aspect))
-  // Cadre du sourire où son incisive occupe à l'écran la même place que la dent du logo.
-  const matchView = view(ANCHOR.x, ANCHOR.y, (brushView.w * S) / M)
-  const smileView = view(SX, SY + 40, portrait ? 960 : Math.max(1200, 760 * aspect))
 
   useGSAP(
     () => {
@@ -162,13 +121,11 @@ export default function Intro({ onReveal }) {
       }
 
       const approach = camera(logoSvg.current, logoView, brushView, aspect)
-      const reveal = camera(smileSvg.current, matchView, smileView, aspect)
 
       gsap.set('.intro .mark__oval', { strokeDasharray: 1, strokeDashoffset: 1 })
       gsap.set('.intro .mark__tooth', { attr: { stroke: LOGO_COLORS.gold, 'stroke-width': 0.14, filter: 'url(#tooth-shadow)' } })
       gsap.set('.brush', { x: 150, y: 60, rotation: -35, opacity: 0, svgOrigin: `${TOOTH.x} ${TOOTH.y}` })
       gsap.set('.foam circle, .tooth-glint', { scale: 0, transformOrigin: '50% 50%' })
-      gsap.set(smileSvg.current, { opacity: 0 })
 
       tl.current = gsap
         .timeline({ paused: true, onComplete: () => setDone(true) })
@@ -189,24 +146,11 @@ export default function Intro({ onReveal }) {
         .to('.foam circle', { scale: 0, opacity: 0, duration: 0.4, stagger: 0.03, ease: 'power2.in' }, 4.35)
         .to('.tooth-glint', { scale: 1, rotation: 90, duration: 0.5, ease: 'back.out(3)' }, 4.55)
         .to('.tooth-glint', { scale: 0, duration: 0.3, ease: 'power2.in' }, 5.05)
-        // 4. La dent blanche prend la forme exacte de l'incisive, puis le sourire apparaît autour d'elle.
-        .to('.intro .mark__tooth', { morphSVG: INCISOR_LOCAL, duration: 0.7, ease: 'power2.inOut' }, 5.0)
-        .to('.intro .mark__tooth', { attr: { 'stroke-width': 0 }, duration: 0.5 }, 5.1)
-        .set('.intro .mark__tooth', { attr: { filter: 'none' } }, 5.6)
-        .call(reveal.apply, null, 5.7)
-        .to(smileSvg.current, { opacity: 1, duration: 0.7, ease: 'power1.inOut' }, 5.7)
-        .set(logoSvg.current, { opacity: 0 }, 6.4)
-        // 5. On recule : la dent est l'incisive d'un sourire.
-        .to(reveal.p, { u: 1, duration: 1.6, ease: 'expo.inOut', onUpdate: reveal.apply }, 6.2)
-        .from(
-          '.smile__glint',
-          { opacity: 0, scale: 0, rotation: -45, svgOrigin: `${GLINT.x} ${GLINT.y}`, duration: 0.7, ease: 'back.out(3)' },
-          7.5,
-        )
-        // 6. On entre sur le site.
-        .to(smileSvg.current, { opacity: 0, scale: 0.97, duration: 0.6, ease: 'power2.in' }, 8.2)
-        .call(onReveal, null, 8.4)
-        .to(root.current, { opacity: 0, duration: 0.6, ease: 'power1.out' }, 8.55)
+        // 4. On recule sur le logo complet, puis on entre sur le site.
+        .to(approach.p, { u: 0, duration: 1, ease: 'expo.inOut', onUpdate: approach.apply }, 5.2)
+        .to('.intro .mark__oval, .intro .mark__letters text, .intro__words', { opacity: 1, duration: 0.6, ease: 'power2.out' }, 5.6)
+        .call(onReveal, null, 6.3)
+        .to(root.current, { opacity: 0, duration: 0.6, ease: 'power1.out' }, 6.4)
 
       // Démarre une fois la police du logo chargée (au plus 0,7 s d'attente).
       const fonts = document.fonts?.ready ?? Promise.resolve()
@@ -278,30 +222,6 @@ export default function Intro({ onReveal }) {
         <path className="tooth-glint" d={sparkle(TOOTH_GLINT.x, TOOTH_GLINT.y, 3.2)} fill={LOGO_COLORS.gold} />
       </svg>
 
-      {/* Scène 2 : le sourire, sur lequel on ressort de la dent. */}
-      <svg ref={smileSvg} className="intro__scene" viewBox={toViewBox(smileView, aspect)} preserveAspectRatio="xMidYMid slice">
-        <defs>
-          {/* Bords de la photo adoucis pour qu'aucun cadre ne se devine. */}
-          <filter id="soft-edge" x="-10%" y="-10%" width="120%" height="120%">
-            <feGaussianBlur stdDeviation="10" />
-          </filter>
-          <mask id="photo-edge">
-            <rect x={PHOTO.x + 14} y={PHOTO.y + 14} width={PHOTO.w - 28} height={PHOTO.h - 28} fill="#fff" filter="url(#soft-edge)" />
-          </mask>
-        </defs>
-        <g className="smile">
-          <image
-            href="/media/sourire.webp"
-            x={PHOTO.x}
-            y={PHOTO.y}
-            width={PHOTO.w}
-            height={PHOTO.h}
-            preserveAspectRatio="xMidYMid meet"
-            mask="url(#photo-edge)"
-          />
-          <path className="smile__glint" d={sparkle(GLINT.x, GLINT.y, 22)} fill={LOGO_COLORS.gold} />
-        </g>
-      </svg>
     </div>
   )
 }

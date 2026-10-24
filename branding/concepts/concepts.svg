@@ -1,0 +1,193 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1600" height="984" viewBox="0 0 1600 984"><rect width="1600" height="984" fill="#f7f7f4"/><text x="60" y="78" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="40" font-weight="700" fill="#161616">Cabinet Delikan — 3 pistes d&#x27;identité</text><text x="60" y="116" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="20" fill="#6b6b6b">Inspiration : noir profond et or, sobriété haut de gamme</text><rect x="60" y="150" width="474.667" height="774" rx="18" fill="#fff" stroke="#e4e4e0" stroke-width="1"/><g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="90" y="190" width="414.667" height="300" preserveAspectRatio="xMidYMid meet">
+  <!-- A — Le Sceau. Exploration : textes en <text>, à vectoriser pour la version finale. -->
+  <defs>
+    <path id="c0-ring" d="M 128 128 m -97 0 a 97 97 0 1 1 194 0 a 97 97 0 1 1 -194 0" />
+  </defs>
+  <circle cx="128" cy="128" r="124" fill="#15120f" />
+  <circle cx="128" cy="128" r="117" fill="none" stroke="#c2a06b" stroke-width="2.5" />
+  <circle cx="128" cy="128" r="111" fill="none" stroke="#c2a06b" stroke-width="0.8" />
+  <circle cx="128" cy="128" r="80" fill="none" stroke="#c2a06b" stroke-width="0.8" />
+  <text font-family="'Bodoni MT', Didot, serif" font-size="13.5" letter-spacing="4.2" fill="#c2a06b">
+    <textPath href="#c0-ring" startOffset="0">CABINET DELIKAN · SAINT-ESTÈVE · IMPLANTOLOGIE ·</textPath>
+  </text>
+  <!-- Monogramme iD : le point du i devient un losange d'or. -->
+  <text x="137" y="160" text-anchor="middle" font-family="'Bodoni MT', Didot, serif" font-size="92" fill="#f3ece0">ıD</text>
+  <path d="M 98.5 80 L 104.5 88 L 98.5 96 L 92.5 88 Z" fill="#c2a06b" />
+  <line x1="98" y1="178" x2="158" y2="178" stroke="#c2a06b" stroke-width="0.8" />
+  <text x="128" y="193" text-anchor="middle" font-family="'Bodoni MT', Didot, serif" font-size="9" letter-spacing="3" fill="#c2a06b">66240</text>
+</svg>
+</g><g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 256" x="90" y="514" width="414.667" height="120" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <path id="l0-ring2" d="M 128 128 m -97 0 a 97 97 0 1 1 194 0 a 97 97 0 1 1 -194 0" />
+  </defs>
+  <rect width="760" height="256" fill="#15120f" />
+  <g transform="translate(20 0)">
+    <circle cx="128" cy="128" r="117" fill="none" stroke="#c2a06b" stroke-width="2.5" />
+    <circle cx="128" cy="128" r="111" fill="none" stroke="#c2a06b" stroke-width="0.8" />
+    <circle cx="128" cy="128" r="80" fill="none" stroke="#c2a06b" stroke-width="0.8" />
+    <text font-family="'Bodoni MT', Didot, serif" font-size="13.5" letter-spacing="4.2" fill="#c2a06b">
+      <textPath href="#l0-ring2">CABINET DELIKAN · SAINT-ESTÈVE · IMPLANTOLOGIE ·</textPath>
+    </text>
+    <text x="137" y="160" text-anchor="middle" font-family="'Bodoni MT', Didot, serif" font-size="92" fill="#f3ece0">ıD</text>
+    <path d="M 98.5 80 L 104.5 88 L 98.5 96 L 92.5 88 Z" fill="#c2a06b" />
+  </g>
+  <line x1="300" y1="70" x2="300" y2="186" stroke="#c2a06b" stroke-width="1" />
+  <text x="336" y="104" font-family="'Bodoni MT', Didot, serif" font-size="15" letter-spacing="9" fill="#c2a06b">CABINET</text>
+  <text x="332" y="160" font-family="'Bodoni MT', Didot, serif" font-size="58" letter-spacing="14" fill="#f3ece0">DELIKAN</text>
+  <text x="336" y="190" font-family="'Segoe UI', Arial, sans-serif" font-weight="300" font-size="11.5" letter-spacing="4.5" fill="#bfb3a2">IMPLANTOLOGIE · CHIRURGIE ORALE</text>
+</svg>
+</g><g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="90" y="660" width="64" height="64" preserveAspectRatio="xMidYMid meet">
+  <!-- A — Le Sceau. Exploration : textes en <text>, à vectoriser pour la version finale. -->
+  <defs>
+    <path id="s064-ring" d="M 128 128 m -97 0 a 97 97 0 1 1 194 0 a 97 97 0 1 1 -194 0" />
+  </defs>
+  <circle cx="128" cy="128" r="124" fill="#15120f" />
+  <circle cx="128" cy="128" r="117" fill="none" stroke="#c2a06b" stroke-width="2.5" />
+  <circle cx="128" cy="128" r="111" fill="none" stroke="#c2a06b" stroke-width="0.8" />
+  <circle cx="128" cy="128" r="80" fill="none" stroke="#c2a06b" stroke-width="0.8" />
+  <text font-family="'Bodoni MT', Didot, serif" font-size="13.5" letter-spacing="4.2" fill="#c2a06b">
+    <textPath href="#s064-ring" startOffset="0">CABINET DELIKAN · SAINT-ESTÈVE · IMPLANTOLOGIE ·</textPath>
+  </text>
+  <!-- Monogramme iD : le point du i devient un losange d'or. -->
+  <text x="137" y="160" text-anchor="middle" font-family="'Bodoni MT', Didot, serif" font-size="92" fill="#f3ece0">ıD</text>
+  <path d="M 98.5 80 L 104.5 88 L 98.5 96 L 92.5 88 Z" fill="#c2a06b" />
+  <line x1="98" y1="178" x2="158" y2="178" stroke="#c2a06b" stroke-width="0.8" />
+  <text x="128" y="193" text-anchor="middle" font-family="'Bodoni MT', Didot, serif" font-size="9" letter-spacing="3" fill="#c2a06b">66240</text>
+</svg>
+</g><text x="122" y="744" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">64px</text><g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="180" y="692" width="32" height="32" preserveAspectRatio="xMidYMid meet">
+  <!-- A — Le Sceau. Exploration : textes en <text>, à vectoriser pour la version finale. -->
+  <defs>
+    <path id="s032-ring" d="M 128 128 m -97 0 a 97 97 0 1 1 194 0 a 97 97 0 1 1 -194 0" />
+  </defs>
+  <circle cx="128" cy="128" r="124" fill="#15120f" />
+  <circle cx="128" cy="128" r="117" fill="none" stroke="#c2a06b" stroke-width="2.5" />
+  <circle cx="128" cy="128" r="111" fill="none" stroke="#c2a06b" stroke-width="0.8" />
+  <circle cx="128" cy="128" r="80" fill="none" stroke="#c2a06b" stroke-width="0.8" />
+  <text font-family="'Bodoni MT', Didot, serif" font-size="13.5" letter-spacing="4.2" fill="#c2a06b">
+    <textPath href="#s032-ring" startOffset="0">CABINET DELIKAN · SAINT-ESTÈVE · IMPLANTOLOGIE ·</textPath>
+  </text>
+  <!-- Monogramme iD : le point du i devient un losange d'or. -->
+  <text x="137" y="160" text-anchor="middle" font-family="'Bodoni MT', Didot, serif" font-size="92" fill="#f3ece0">ıD</text>
+  <path d="M 98.5 80 L 104.5 88 L 98.5 96 L 92.5 88 Z" fill="#c2a06b" />
+  <line x1="98" y1="178" x2="158" y2="178" stroke="#c2a06b" stroke-width="0.8" />
+  <text x="128" y="193" text-anchor="middle" font-family="'Bodoni MT', Didot, serif" font-size="9" letter-spacing="3" fill="#c2a06b">66240</text>
+</svg>
+</g><text x="196" y="744" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">32px</text><g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="238" y="708" width="16" height="16" preserveAspectRatio="xMidYMid meet">
+  <!-- A — Le Sceau. Exploration : textes en <text>, à vectoriser pour la version finale. -->
+  <defs>
+    <path id="s016-ring" d="M 128 128 m -97 0 a 97 97 0 1 1 194 0 a 97 97 0 1 1 -194 0" />
+  </defs>
+  <circle cx="128" cy="128" r="124" fill="#15120f" />
+  <circle cx="128" cy="128" r="117" fill="none" stroke="#c2a06b" stroke-width="2.5" />
+  <circle cx="128" cy="128" r="111" fill="none" stroke="#c2a06b" stroke-width="0.8" />
+  <circle cx="128" cy="128" r="80" fill="none" stroke="#c2a06b" stroke-width="0.8" />
+  <text font-family="'Bodoni MT', Didot, serif" font-size="13.5" letter-spacing="4.2" fill="#c2a06b">
+    <textPath href="#s016-ring" startOffset="0">CABINET DELIKAN · SAINT-ESTÈVE · IMPLANTOLOGIE ·</textPath>
+  </text>
+  <!-- Monogramme iD : le point du i devient un losange d'or. -->
+  <text x="137" y="160" text-anchor="middle" font-family="'Bodoni MT', Didot, serif" font-size="92" fill="#f3ece0">ıD</text>
+  <path d="M 98.5 80 L 104.5 88 L 98.5 96 L 92.5 88 Z" fill="#c2a06b" />
+  <line x1="98" y1="178" x2="158" y2="178" stroke="#c2a06b" stroke-width="0.8" />
+  <text x="128" y="193" text-anchor="middle" font-family="'Bodoni MT', Didot, serif" font-size="9" letter-spacing="3" fill="#c2a06b">66240</text>
+</svg>
+</g><text x="246" y="744" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">16px</text><text x="90.0" y="780" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="26" font-weight="700" fill="#161616">A · Le Sceau</text><text x="90.0" y="814" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#555">Un sceau d&#x27;or, comme une maison de</text><text x="90.0" y="840" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#555">tradition : le iD au centre, le nom en</text><text x="90.0" y="866" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#555">couronne.</text><rect x="562.667" y="150" width="474.667" height="774" rx="18" fill="#fff" stroke="#161616" stroke-width="2"/><g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="592.667" y="190" width="414.667" height="300" preserveAspectRatio="xMidYMid meet">
+  <!-- B — Le Pilier. Un D en deux pièces : le pilier (l'implant) et la forme qu'il porte (la couronne). -->
+  <rect width="256" height="256" rx="28" fill="#15120f" />
+  <g transform="translate(-6 0)" fill="#c2a06b">
+    <!-- Pilier : sommet arrondi, base effilée comme une racine. -->
+    <path d="M 70 54 A 13 13 0 0 1 96 54 L 96 184 L 91 207 A 8 8 0 0 1 75 207 L 70 184 Z" />
+    <!-- Couronne : demi-anneau détaché du pilier. -->
+    <path d="M 108 41 A 87 87 0 0 1 108 215 L 108 189 A 61 61 0 0 0 108 67 Z" />
+  </g>
+</svg>
+</g><g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 256" x="592.667" y="514" width="414.667" height="120" preserveAspectRatio="xMidYMid meet">
+  <rect width="760" height="256" fill="#15120f" />
+  <g transform="translate(40 48) scale(0.625)" fill="#c2a06b">
+    <path d="M 70 54 A 13 13 0 0 1 96 54 L 96 184 L 91 207 A 8 8 0 0 1 75 207 L 70 184 Z" />
+    <path d="M 108 41 A 87 87 0 0 1 108 215 L 108 189 A 61 61 0 0 0 108 67 Z" />
+  </g>
+  <text x="222" y="146" font-family="'Segoe UI', Arial, sans-serif" font-weight="300" font-size="62" letter-spacing="22" fill="#f3ece0">DELIKAN</text>
+  <rect x="224" y="166" width="40" height="2" fill="#c2a06b" />
+  <text x="278" y="172" font-family="'Segoe UI', Arial, sans-serif" font-weight="400" font-size="11" letter-spacing="4" fill="#bfb3a2">IMPLANTOLOGIE · CHIRURGIE ORALE</text>
+</svg>
+</g><g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="592.667" y="660" width="64" height="64" preserveAspectRatio="xMidYMid meet">
+  <!-- B — Le Pilier. Un D en deux pièces : le pilier (l'implant) et la forme qu'il porte (la couronne). -->
+  <rect width="256" height="256" rx="28" fill="#15120f" />
+  <g transform="translate(-6 0)" fill="#c2a06b">
+    <!-- Pilier : sommet arrondi, base effilée comme une racine. -->
+    <path d="M 70 54 A 13 13 0 0 1 96 54 L 96 184 L 91 207 A 8 8 0 0 1 75 207 L 70 184 Z" />
+    <!-- Couronne : demi-anneau détaché du pilier. -->
+    <path d="M 108 41 A 87 87 0 0 1 108 215 L 108 189 A 61 61 0 0 0 108 67 Z" />
+  </g>
+</svg>
+</g><text x="624.667" y="744" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">64px</text><g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="682.667" y="692" width="32" height="32" preserveAspectRatio="xMidYMid meet">
+  <!-- B — Le Pilier. Un D en deux pièces : le pilier (l'implant) et la forme qu'il porte (la couronne). -->
+  <rect width="256" height="256" rx="28" fill="#15120f" />
+  <g transform="translate(-6 0)" fill="#c2a06b">
+    <!-- Pilier : sommet arrondi, base effilée comme une racine. -->
+    <path d="M 70 54 A 13 13 0 0 1 96 54 L 96 184 L 91 207 A 8 8 0 0 1 75 207 L 70 184 Z" />
+    <!-- Couronne : demi-anneau détaché du pilier. -->
+    <path d="M 108 41 A 87 87 0 0 1 108 215 L 108 189 A 61 61 0 0 0 108 67 Z" />
+  </g>
+</svg>
+</g><text x="698.667" y="744" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">32px</text><g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="740.667" y="708" width="16" height="16" preserveAspectRatio="xMidYMid meet">
+  <!-- B — Le Pilier. Un D en deux pièces : le pilier (l'implant) et la forme qu'il porte (la couronne). -->
+  <rect width="256" height="256" rx="28" fill="#15120f" />
+  <g transform="translate(-6 0)" fill="#c2a06b">
+    <!-- Pilier : sommet arrondi, base effilée comme une racine. -->
+    <path d="M 70 54 A 13 13 0 0 1 96 54 L 96 184 L 91 207 A 8 8 0 0 1 75 207 L 70 184 Z" />
+    <!-- Couronne : demi-anneau détaché du pilier. -->
+    <path d="M 108 41 A 87 87 0 0 1 108 215 L 108 189 A 61 61 0 0 0 108 67 Z" />
+  </g>
+</svg>
+</g><text x="748.667" y="744" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">16px</text><text x="592.6666666666667" y="780" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="26" font-weight="700" fill="#161616">B · Le Pilier</text><text x="592.6666666666667" y="808" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#161616" letter-spacing="1.5">RECOMMENDED</text><text x="592.6666666666667" y="842" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#555">Un D en deux pièces : le pilier (l&#x27;implant)</text><text x="592.6666666666667" y="868" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#555">et la couronne qu&#x27;il porte.</text><rect x="1065.33" y="150" width="474.667" height="774" rx="18" fill="#fff" stroke="#e4e4e0" stroke-width="1"/><g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="1095.33" y="190" width="414.667" height="300" preserveAspectRatio="xMidYMid meet">
+  <!-- C — La Maison. Symbole réduit : le I d'or surmonté de son losange, seul repère graphique de la marque. -->
+  <rect width="256" height="256" fill="#f6f1e8" />
+  <rect x="14" y="14" width="228" height="228" fill="none" stroke="#c2a06b" stroke-width="1.5" />
+  <path d="M 128 38 L 141 56 L 128 74 L 115 56 Z" fill="#c2a06b" />
+  <rect x="120" y="86" width="16" height="132" fill="#15120f" />
+  <rect x="104" y="86" width="48" height="5" fill="#15120f" />
+  <rect x="104" y="213" width="48" height="5" fill="#15120f" />
+</svg>
+</g><g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 256" x="1095.33" y="514" width="414.667" height="120" preserveAspectRatio="xMidYMid meet">
+  <!-- C — La Maison : mot-symbole façon maison de couture. Le I est dessiné, surmonté du losange d'or. -->
+  <rect width="760" height="256" fill="#f6f1e8" />
+  <text x="364" y="150" text-anchor="end" font-family="'Bodoni MT', Didot, serif" font-size="96" letter-spacing="16" fill="#15120f">DEL</text>
+  <g>
+    <path d="M 380 52 L 389 64 L 380 76 L 371 64 Z" fill="#c2a06b" />
+    <rect x="374" y="85" width="12" height="65" fill="#15120f" />
+    <rect x="364" y="85" width="32" height="3.5" fill="#15120f" />
+    <rect x="364" y="146.5" width="32" height="3.5" fill="#15120f" />
+  </g>
+  <text x="412" y="150" font-family="'Bodoni MT', Didot, serif" font-size="96" letter-spacing="16" fill="#15120f">KAN</text>
+  <line x1="200" y1="182" x2="560" y2="182" stroke="#c2a06b" stroke-width="1" />
+  <text x="380" y="206" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-weight="400" font-size="11.5" letter-spacing="6" fill="#6b6259">IMPLANTOLOGIE &amp; CHIRURGIE ORALE · SAINT-ESTÈVE</text>
+</svg>
+</g><g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="1095.33" y="660" width="64" height="64" preserveAspectRatio="xMidYMid meet">
+  <!-- C — La Maison. Symbole réduit : le I d'or surmonté de son losange, seul repère graphique de la marque. -->
+  <rect width="256" height="256" fill="#f6f1e8" />
+  <rect x="14" y="14" width="228" height="228" fill="none" stroke="#c2a06b" stroke-width="1.5" />
+  <path d="M 128 38 L 141 56 L 128 74 L 115 56 Z" fill="#c2a06b" />
+  <rect x="120" y="86" width="16" height="132" fill="#15120f" />
+  <rect x="104" y="86" width="48" height="5" fill="#15120f" />
+  <rect x="104" y="213" width="48" height="5" fill="#15120f" />
+</svg>
+</g><text x="1127.33" y="744" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">64px</text><g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="1185.33" y="692" width="32" height="32" preserveAspectRatio="xMidYMid meet">
+  <!-- C — La Maison. Symbole réduit : le I d'or surmonté de son losange, seul repère graphique de la marque. -->
+  <rect width="256" height="256" fill="#f6f1e8" />
+  <rect x="14" y="14" width="228" height="228" fill="none" stroke="#c2a06b" stroke-width="1.5" />
+  <path d="M 128 38 L 141 56 L 128 74 L 115 56 Z" fill="#c2a06b" />
+  <rect x="120" y="86" width="16" height="132" fill="#15120f" />
+  <rect x="104" y="86" width="48" height="5" fill="#15120f" />
+  <rect x="104" y="213" width="48" height="5" fill="#15120f" />
+</svg>
+</g><text x="1201.33" y="744" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">32px</text><g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" x="1243.33" y="708" width="16" height="16" preserveAspectRatio="xMidYMid meet">
+  <!-- C — La Maison. Symbole réduit : le I d'or surmonté de son losange, seul repère graphique de la marque. -->
+  <rect width="256" height="256" fill="#f6f1e8" />
+  <rect x="14" y="14" width="228" height="228" fill="none" stroke="#c2a06b" stroke-width="1.5" />
+  <path d="M 128 38 L 141 56 L 128 74 L 115 56 Z" fill="#c2a06b" />
+  <rect x="120" y="86" width="16" height="132" fill="#15120f" />
+  <rect x="104" y="86" width="48" height="5" fill="#15120f" />
+  <rect x="104" y="213" width="48" height="5" fill="#15120f" />
+</svg>
+</g><text x="1251.33" y="744" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="12" fill="#8a8a8a" text-anchor="middle">16px</text><text x="1095.3333333333335" y="780" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="26" font-weight="700" fill="#161616">C · La Maison</text><text x="1095.3333333333335" y="814" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#555">Un mot-symbole de maison de couture ; le I</text><text x="1095.3333333333335" y="840" font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#555">du nom porte le losange d&#x27;or.</text></svg>

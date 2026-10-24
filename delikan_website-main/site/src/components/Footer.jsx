@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import { gsap } from 'gsap'
 import { useGSAP } from '@gsap/react'
-import { CABINET } from '../data'
+import { CABINET, SOINS } from '../data'
 import { Heading, Fade } from './Heading'
 import { Button } from './Button'
 import { Calendar } from './Icons'
@@ -54,6 +54,21 @@ export default function Footer() {
             <a href={CABINET.phoneHref}>{CABINET.phone}</a>
           </div>
           <div>
+            <span className="footer__title">Soins</span>
+            {SOINS.map((s) => (
+              <a
+                key={s.title}
+                href="#soins"
+                onClick={(e) => {
+                  e.preventDefault()
+                  scrollToId('soins')
+                }}
+              >
+                {s.title}
+              </a>
+            ))}
+          </div>
+          <div>
             <span className="footer__title">Liens</span>
             <a href={CABINET.doctolib} target="_blank" rel="noreferrer">
               Doctolib
@@ -63,6 +78,9 @@ export default function Footer() {
             </a>
             <a href={CABINET.maps} target="_blank" rel="noreferrer">
               Google Maps
+            </a>
+            <a href={CABINET.annuaire} target="_blank" rel="noreferrer">
+              Annuaire santé.fr
             </a>
           </div>
         </div>

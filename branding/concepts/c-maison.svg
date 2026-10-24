@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <!-- C — La Maison. Symbole réduit : le I d'or surmonté de son losange, seul repère graphique de la marque. -->
+  <rect width="256" height="256" fill="#f6f1e8" />
+  <rect x="14" y="14" width="228" height="228" fill="none" stroke="#c2a06b" stroke-width="1.5" />
+  <path d="M 128 38 L 141 56 L 128 74 L 115 56 Z" fill="#c2a06b" />
+  <rect x="120" y="86" width="16" height="132" fill="#15120f" />
+  <rect x="104" y="86" width="48" height="5" fill="#15120f" />
+  <rect x="104" y="213" width="48" height="5" fill="#15120f" />
+</svg>

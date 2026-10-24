@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import { useGSAP } from '@gsap/react'
-import { VISITE } from '../data'
+import { VISITE, sectionIndex } from '../data'
 import { Heading, Label } from './Heading'
 import Picture from './Picture'
 import { MQ } from '../smoothScroll'
@@ -42,7 +42,7 @@ export default function Visite() {
         cards.forEach((card) => {
           // L'image glisse légèrement dans son cadre : effet de profondeur.
           gsap.fromTo(
-            card.querySelector('img'),
+            card.querySelector('.visite__img > *'),
             { xPercent: -7 },
             {
               xPercent: 7,
@@ -68,7 +68,7 @@ export default function Visite() {
     <section className="visite" id="visite" data-theme="dark" ref={root}>
       <div className="visite__intro container">
         <div>
-          <Label index="02" light>
+          <Label index={sectionIndex('visite')} light>
             Visite du cabinet
           </Label>
           <Heading className="h2 h2--xl visite__title">

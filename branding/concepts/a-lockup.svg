@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 256" width="800" height="256">
+  <rect width="800" height="256" fill="#15120f" />
+  <g transform="translate(16 0)">
+  <defs>
+    <!-- Arc du haut (gauche → droite par le haut) et arc du bas (gauche → droite par le bas) : les deux textes se lisent à l'endroit. -->
+    <path id="l-top" d="M 30 128 A 98 98 0 0 1 226 128" />
+    <path id="l-bottom" d="M 21 128 A 107 107 0 0 0 235 128" />
+  </defs>
+    <circle cx="128" cy="128" r="117" fill="none" stroke="#c2a06b" stroke-width="2.5" />
+  <circle cx="128" cy="128" r="83" fill="none" stroke="#c2a06b" stroke-width="0.8" />
+
+  <text font-family="'Bodoni MT', Didot, serif" font-size="14" letter-spacing="5" fill="#c2a06b" text-anchor="middle">
+    <textPath href="#l-top" startOffset="50%">IBRAHIM DELIKAN</textPath>
+  </text>
+  <text font-family="'Bodoni MT', Didot, serif" font-size="11" letter-spacing="4.5" fill="#c2a06b" text-anchor="middle">
+    <textPath href="#l-bottom" startOffset="50%">IMPLANTOLOGIE</textPath>
+  </text>
+  <!-- Repères à 9 h et 3 h. -->
+  <circle cx="28" cy="128" r="2.2" fill="#c2a06b" />
+  <circle cx="228" cy="128" r="2.2" fill="#c2a06b" />
+
+  <!-- Monogramme iD : le point du i est la dent d'or du logo d'origine. -->
+  <text x="137" y="150" text-anchor="middle" font-family="'Bodoni MT', Didot, serif" font-size="92" fill="#f3ece0">ıD</text>
+  <path transform="translate(91.3 79) scale(0.9)" fill="#c2a06b"
+    d="M4 0C1.5 0 0 2 0 5c0 3 1 4.5 1.6 8 .5 3 .8 8 2.4 8 1.5 0 1.6-4 2.3-6.2.4-1.2.9-1.8 1.7-1.8s1.3.6 1.7 1.8c.7 2.2.8 6.2 2.3 6.2 1.6 0 1.9-5 2.4-8C15 9.5 16 8 16 5c0-3-1.5-5-4-5-1.7 0-2.6.8-4 .8S5.7 0 4 0z" />
+  <line x1="104" y1="165" x2="152" y2="165" stroke="#c2a06b" stroke-width="0.8" />
+  <text x="128" y="180" text-anchor="middle" font-family="'Bodoni MT', Didot, serif" font-size="7.6" letter-spacing="2.2" fill="#c2a06b">CABINET DENTAIRE</text>
+  </g>
+  <line x1="304" y1="72" x2="304" y2="184" stroke="#c2a06b" stroke-width="1" />
+  <text x="336" y="100" font-family="'Bodoni MT', Didot, serif" font-size="13" letter-spacing="8" fill="#c2a06b">CABINET DENTAIRE</text>
+  <text x="333" y="148" font-family="'Bodoni MT', Didot, serif" font-size="33" letter-spacing="5" fill="#f3ece0">IBRAHIM DELIKAN</text>
+  <text x="336" y="180" font-family="'Segoe UI', Arial, sans-serif" font-weight="300" font-size="11" letter-spacing="4.5" fill="#bfb3a2">IMPLANTOLOGIE · CHIRURGIE ORALE</text>
+</svg>
