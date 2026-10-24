@@ -4,7 +4,6 @@ import { useGSAP } from '@gsap/react'
 import { ETAPES, sectionIndex } from '../data'
 import { Heading, Label, Fade } from './Heading'
 import { MQ } from '../smoothScroll'
-import { Implant } from './Engravings'
 
 export default function Etapes() {
   const root = useRef(null)
@@ -44,7 +43,6 @@ export default function Etapes() {
 
   return (
     <section className="section etapes" id="etapes" ref={root}>
-      <Implant className="bg-plate bg-plate--etapes" />
       <div className="container etapes__grid">
         <div className="etapes__head">
           <Label index={sectionIndex('etapes')}>Première visite</Label>

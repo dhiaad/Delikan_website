@@ -1,0 +1,158 @@
+/* ==========================================================================
+   Mâchoire 3D au trait (sommaire des pages)
+   Posée à cheval entre l'en-tête de page et la partie suivante ; on peut la faire tourner.
+   ========================================================================== */
+
+.page-head__toc ol {
+  grid-template-columns: repeat(var(--cols, 2), minmax(0, 1fr));
+}
+
+/* L'en-tête laisse dépasser l'arcade vers la partie suivante ; le sceau en filigrane reste rogné. */
+.page-head {
+  overflow: visible;
+  z-index: 3;
+}
+.page-head__clip {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.page-head__arch {
+  position: relative;
+  align-self: end;
+  min-height: 150px;
+}
+.page-head__arch .arch {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: min(100%, 460px);
+  /* Descend jusqu'à chevaucher la limite basse de l'en-tête. */
+  translate: -50% calc(clamp(60px, 8vw, 100px) - 10px);
+}
+
+.arch {
+  position: relative;
+  height: 330px;
+  display: grid;
+  place-items: center;
+  perspective: 760px;
+  cursor: grab;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+  outline: none;
+}
+.arch:active {
+  cursor: grabbing;
+}
+.arch__defs {
+  position: absolute;
+}
+.arch__stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+.arch__float {
+  transform-style: preserve-3d;
+  animation: arch-float 6s ease-in-out infinite;
+}
+.arch__spin {
+  position: relative;
+  width: 0;
+  height: 0;
+  transform-style: preserve-3d;
+  transform: rotateX(-22deg);
+  will-change: transform;
+}
+.arch__tooth {
+  position: absolute;
+  overflow: visible;
+  backface-visibility: visible;
+}
+.arch__tooth path {
+  fill: none;
+  vector-effect: non-scaling-stroke;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.arch__outline {
+  stroke-width: 1.05;
+}
+.arch__line {
+  stroke: #d3c0a0;
+  stroke-width: 0.7;
+  stroke-opacity: 0.5;
+}
+.arch__line--soft {
+  stroke-opacity: 0.22;
+}
+.arch__tooth.is-gold .arch__outline {
+  fill: rgba(216, 178, 108, 0.16);
+  stroke-width: 1.4;
+}
+.arch__tooth.is-gold .arch__line {
+  stroke: #d8b26c;
+  stroke-opacity: 0.85;
+}
+.arch__tooth.is-gold {
+  filter: drop-shadow(0 0 7px rgba(216, 178, 108, 0.6));
+}
+.arch__shadow {
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  width: 260px;
+  height: 18px;
+  translate: -50% 0;
+  border-radius: 50%;
+  border: 1px dashed rgba(191, 159, 108, 0.4);
+  animation: arch-shadow 6s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes arch-float {
+  0%,
+  100% {
+    transform: translateY(-6px);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+@keyframes arch-shadow {
+  0%,
+  100% {
+    transform: scaleX(0.84);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 720px) {
+  .page-head__toc ol {
+    grid-template-columns: 1fr;
+  }
+  .page-head__arch {
+    min-height: 120px;
+  }
+  .page-head__arch .arch {
+    translate: -50% 50px;
+  }
+  .arch {
+    height: 230px;
+    zoom: 0.85;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .arch__float,
+  .arch__shadow {
+    animation: none;
+  }
+}

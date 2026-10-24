@@ -1,0 +1,301 @@
+/* ==========================================================================
+   DELIKAN · finitions : barre lisible, polices de lecture, accordéon fluide,
+   engagements, chiffres du praticien, sommaire des pages.
+   ========================================================================== */
+
+/* Barre du haut : toujours sur fond brun, quel que soit le fond de la page,
+   pour que les liens ne se confondent jamais avec ce qu'il y a dessous. */
+.nav,
+.nav--solid {
+  color: var(--white);
+  background: color-mix(in srgb, var(--ink) 94%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.nav::after {
+  transform: scaleX(1);
+  opacity: 0.35;
+}
+.nav__links a.is-active {
+  color: var(--gold);
+}
+.nav__menu {
+  color: var(--white);
+}
+.nav__book::before {
+  background: var(--white) !important;
+}
+.nav__book:hover {
+  color: var(--ink) !important;
+}
+/* Logo complet : le sceau avec sa couronne de texte. */
+.logo__mark {
+  width: 62px;
+  height: 62px;
+}
+.nav__inner {
+  height: 96px;
+}
+.logo__name {
+  font-size: 1.08rem;
+}
+
+/* Polices : Bodoni réservé aux grands titres ; tout ce qui se lit est en Montserrat. */
+.lead,
+.hero .hero__lead,
+.page-head__lead {
+  font-family: var(--sans);
+  font-size: clamp(1.02rem, 1.25vw, 1.15rem);
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: 0;
+  font-variation-settings: normal;
+}
+.lead {
+  color: var(--fg);
+}
+.h3,
+.formation h3,
+.visite__card h3,
+.engagement .h3,
+.focus__steps .h3,
+.infos .h3,
+.docteur__parcours .h3 {
+  font-family: var(--sans);
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+  font-variation-settings: normal;
+}
+.faq__list .soin__title {
+  font-family: var(--sans);
+  font-size: clamp(1rem, 1.3vw, 1.12rem);
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: 0;
+  font-variation-settings: normal;
+}
+.soin__body,
+.soin__points li,
+.focus__steps p,
+.about__points dd,
+.engagement .muted,
+.formation p {
+  font-family: var(--sans);
+}
+.docteur__quote blockquote {
+  font-size: clamp(1.2rem, 1.8vw, 1.45rem);
+}
+.qualif strong {
+  font-family: var(--sans);
+  font-size: 0.98rem;
+  font-weight: 600;
+}
+
+/* Accordéon : dépliage fluide en CSS, sans démontage du contenu. */
+.soin__panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  opacity: 0;
+  transition:
+    grid-template-rows 0.55s var(--ease),
+    opacity 0.4s ease;
+}
+.soin.is-open .soin__panel {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+.soin__panel-inner {
+  min-height: 0;
+}
+.soin__head {
+  scroll-margin-top: 140px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .soin__panel {
+    transition: none;
+  }
+}
+
+/* Engagements : cinq cartes, lignes horizontales (plus de séparateurs verticaux à recaler). */
+.engagements__grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0 clamp(18px, 2vw, 30px);
+  border-top: 0;
+}
+.engagement,
+.engagement + .engagement {
+  padding: 30px 0 14px;
+  border-left: 0;
+  border-top: 1px solid var(--line);
+}
+.engagement__n {
+  margin-bottom: 18px;
+}
+.engagement:hover {
+  background: none;
+}
+.engagement:hover .engagement__n {
+  color: var(--gold);
+}
+@media (max-width: 1100px) {
+  .engagements__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (max-width: 899px) {
+  .engagements__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .engagement:nth-child(3) {
+    padding-left: 0;
+  }
+}
+@media (max-width: 720px) {
+  .engagements__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Chiffres du praticien : le niveau de formation en grand. */
+.docteur__chiffres {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(16px, 2vw, 28px);
+  margin: 0 0 clamp(60px, 7vw, 100px);
+  padding: 0;
+}
+.docteur__chiffres li {
+  padding: clamp(22px, 2.4vw, 32px);
+  background: var(--ink);
+  color: var(--white);
+}
+.docteur__chiffres li:first-child {
+  background: linear-gradient(140deg, #3b332b, var(--ink));
+  outline: 1px solid rgba(191, 159, 108, 0.5);
+  outline-offset: -8px;
+}
+.docteur__chiffres strong {
+  display: block;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(2.4rem, 4.4vw, 4rem);
+  line-height: 1;
+  white-space: nowrap;
+  letter-spacing: -0.02em;
+  color: var(--gold);
+}
+.docteur__chiffres span {
+  display: block;
+  margin-top: 14px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: rgba(243, 237, 228, 0.72);
+}
+@media (max-width: 899px) {
+  .docteur__chiffres {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Premier écran : « Bac +12 » tient dans sa colonne. */
+.hero__proofs strong {
+  white-space: nowrap;
+  font-size: clamp(1.9rem, 2.8vw, 2.7rem);
+}
+
+/* En-tête de page : sommaire en cartes sous le titre. */
+.page-head__toc {
+  position: relative;
+  margin-top: clamp(40px, 5vw, 64px);
+}
+.page-head__toc-title {
+  margin: 0 0 14px;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.page-head__toc ol {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.page-head__toc a {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 14px;
+  row-gap: 4px;
+  height: 100%;
+  padding: 20px 46px 20px 20px;
+  border: 1px solid rgba(191, 159, 108, 0.28);
+  background: rgba(243, 237, 228, 0.03);
+  text-decoration: none;
+  transition:
+    border-color 0.4s,
+    background 0.4s,
+    transform 0.5s var(--ease);
+}
+.page-head__toc a:hover {
+  padding-left: 20px;
+  border-color: var(--gold);
+  background: rgba(191, 159, 108, 0.08);
+  transform: translateY(-3px);
+}
+.page-head__toc small {
+  grid-row: span 2;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--gold);
+}
+.page-head__toc strong {
+  font-weight: 600;
+  font-size: 0.98rem;
+  color: var(--white);
+}
+.page-head__toc span {
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: rgba(243, 237, 228, 0.6);
+}
+.page-head__toc i {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  translate: 0 -50%;
+  font-style: normal;
+  color: var(--gold);
+  transition: transform 0.5s var(--ease);
+}
+.page-head__toc a:hover i {
+  transform: translateY(4px);
+}
+
+@media (max-width: 1240px) {
+  .nav__inner {
+    grid-template-rows: 84px auto;
+  }
+  .logo__mark {
+    width: 54px;
+    height: 54px;
+  }
+}
+@media (max-width: 720px) {
+  .nav__inner {
+    grid-template-rows: 72px auto;
+  }
+  .logo__mark {
+    width: 50px;
+    height: 50px;
+  }
+}

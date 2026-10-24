@@ -5,16 +5,16 @@ import RevealImage from './RevealImage'
 const POINTS = [
   { k: 'Cœur de pratique', v: 'Implantologie et chirurgie orale' },
   { k: 'Pour qui', v: 'Toute la famille, des enfants aux seniors' },
-  { k: 'Sur place', v: 'Deux salles de soins et une radio panoramique' },
+  { k: 'Sur place', v: 'Deux salles de soins, une radio 3D et une caméra d’empreinte numérique' },
   { k: 'Rendez-vous', v: 'En ligne sur Doctolib à toute heure, ou par téléphone' },
   { k: 'Prise en charge', v: 'Cabinet conventionné Assurance Maladie' },
 ]
 
 export default function About() {
   return (
-    <section className="section about" id="cabinet">
+    <section className="section about" id="bienvenue">
       <div className="container">
-        <Label index={sectionIndex('cabinet')}>Le cabinet</Label>
+        <Label index={sectionIndex('bienvenue')}>Le cabinet</Label>
         <Heading className="h2 h2--xl about__title">
           Des soins précis, <em>une écoute sincère.</em>
         </Heading>

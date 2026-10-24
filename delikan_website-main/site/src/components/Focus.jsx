@@ -3,12 +3,12 @@ import { Heading, Label, Fade } from './Heading'
 import { Button } from './Button'
 import { Calendar } from './Icons'
 
-// Mise en avant du traitement implantaire, sur fond sombre.
+// Mise en avant du traitement implantaire, sur fond sable.
 export default function Focus() {
   return (
-    <section className="section focus" id="implants" data-theme="dark">
+    <section className="section focus" id="implants">
       <div className="container">
-        <Label index={sectionIndex('implants')} light>
+        <Label index={sectionIndex('implants')}>
           Implantologie &amp; chirurgie
         </Label>
         <Heading className="h2 h2--xl">
@@ -54,7 +54,7 @@ export default function Focus() {
               ))}
             </ol>
             <Fade delay={0.3}>
-              <Button href={CABINET.doctolib} external magnetic variant="gold" icon={<Calendar />}>
+              <Button href={CABINET.doctolib} external magnetic icon={<Calendar />}>
                 Prendre rendez-vous pour un bilan
               </Button>
             </Fade>

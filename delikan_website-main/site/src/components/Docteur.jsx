@@ -41,6 +41,16 @@ export default function Docteur() {
       <div className="container">
         <Label index={sectionIndex('docteur')}>Le praticien</Label>
 
+        {/* Le niveau de formation, d'un coup d'œil. */}
+        <ul className="docteur__chiffres">
+          {DOCTOR.chiffres.map((c, i) => (
+            <Fade as="li" key={c.n} delay={0.05 + i * 0.08}>
+              <strong>{c.n}</strong>
+              <span>{c.t}</span>
+            </Fade>
+          ))}
+        </ul>
+
         <div className="docteur__grid">
           <div className="docteur__aside">
             <RevealImage name="portrait" alt="Portrait du Dr Ibrahim Delikan" className="docteur__portrait" />

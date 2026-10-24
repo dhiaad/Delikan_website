@@ -12,8 +12,8 @@
   <text font-family="'Bodoni MT', Didot, serif" font-size="14" letter-spacing="5" fill="#c2a06b" text-anchor="middle">
     <textPath href="#arc-top" startOffset="50%">IBRAHIM DELIKAN</textPath>
   </text>
-  <text font-family="'Bodoni MT', Didot, serif" font-size="11" letter-spacing="4.5" fill="#c2a06b" text-anchor="middle">
-    <textPath href="#arc-bottom" startOffset="50%">IMPLANTOLOGIE</textPath>
+  <text font-family="'Bodoni MT', Didot, serif" font-size="11" letter-spacing="3.6" fill="#c2a06b" text-anchor="middle">
+    <textPath href="#arc-bottom" startOffset="50%">CHIRURGIEN-DENTISTE</textPath>
   </text>
   <!-- Repères à 9 h et 3 h. -->
   <circle cx="28" cy="128" r="2.2" fill="#c2a06b" />

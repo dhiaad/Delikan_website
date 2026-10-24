@@ -2,7 +2,6 @@ import { CABINET, SOINS, sectionIndex } from '../data'
 import { Heading, Label, Fade } from './Heading'
 import { Button } from './Button'
 import { Calendar } from './Icons'
-import { ToothSection } from './Engravings'
 import Accordion from './Accordion'
 
 const items = SOINS.map((s) => ({
@@ -25,7 +24,6 @@ const items = SOINS.map((s) => ({
 export default function Soins() {
   return (
     <section className="section soins" id="soins">
-      <ToothSection className="bg-plate bg-plate--soins" />
       <div className="container soins__grid">
         <div className="soins__head">
           <Label index={sectionIndex('soins')}>Les soins</Label>

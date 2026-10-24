@@ -1,0 +1,807 @@
+/* ==========================================================================
+   DELIKAN · charte « Le Sceau »
+   Palette apaisée pour un cabinet médical : sable clair, brun taupe chaud (au lieu du noir), or doux.
+   Bodoni Moda (titres, fidèle au sceau) et Montserrat (texte).
+   Chargée après index.css : redéfinit les jetons et les éléments clés.
+   ========================================================================== */
+
+@property --bg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #f3ede4;
+}
+@property --fg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #2e2925;
+}
+
+:root {
+  --white: #f3ede4;
+  --paper: #ebe3d6;
+  --ink: #2e2925;
+  --ink-2: #39332e;
+  --gold: #bf9f6c;
+  --gold-soft: #e3d3b4;
+  /* L'ancien accent bleu devient un or profond, lisible sur ivoire. */
+  --blue: #8a6b3d;
+  --blue-deep: #6e5430;
+  --blue-light: #d6bb87;
+
+  --bg: var(--white);
+  --fg: var(--ink);
+  --fg-soft: #675e54;
+  --line: rgba(46, 41, 37, 0.12);
+
+  --serif: 'Bodoni Moda', 'Bodoni MT', Didot, Georgia, serif;
+  --logo-serif: var(--serif);
+  --sans: 'Montserrat', system-ui, -apple-system, sans-serif;
+}
+
+html.is-dark {
+  --bg: var(--ink);
+  --fg: var(--white);
+  --fg-soft: rgba(243, 237, 228, 0.7);
+  --line: rgba(191, 159, 108, 0.22);
+}
+
+/* Passage clair ↔ sombre plus lent et plus doux. */
+html {
+  transition:
+    --bg 1.6s var(--ease-io),
+    --fg 1.6s var(--ease-io),
+    --fg-soft 1.6s var(--ease-io),
+    --line 1.6s var(--ease-io);
+}
+
+body {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.75;
+  letter-spacing: 0.005em;
+}
+
+/* Typographie ------------------------------------------------------------ */
+
+.h2,
+.h3,
+.lead,
+.soin__title,
+.formation h3,
+.visite__card h3,
+.menu__list strong {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-variation-settings: 'opsz' 48;
+}
+.h2 {
+  letter-spacing: -0.03em;
+  line-height: 1.02;
+}
+.h2 em,
+.lead em {
+  font-style: italic;
+  color: var(--gold);
+}
+html:not(.is-dark) .h2 em {
+  color: var(--blue);
+}
+.lead {
+  font-size: clamp(1.2rem, 1.8vw, 1.55rem);
+  line-height: 1.45;
+}
+.label {
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+}
+.label__index,
+html:not(.is-dark) .label__index {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--gold);
+}
+.label__rule {
+  background: var(--gold);
+  opacity: 1;
+}
+::selection {
+  background: var(--gold);
+  color: var(--ink);
+}
+
+/* Boutons : pilules or, remplissage noir au survol ------------------------- */
+
+.btn {
+  --btn-bg: var(--gold);
+  --btn-fg: var(--ink);
+  --btn-bd: var(--gold);
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+}
+.btn::before {
+  background: var(--ink);
+  border-radius: inherit;
+}
+.btn:hover {
+  color: var(--white);
+  border-color: var(--ink);
+}
+html.is-dark .btn::before,
+[data-theme="dark"] .btn::before {
+  background: var(--white);
+}
+html.is-dark .btn:hover,
+[data-theme="dark"] .btn:hover {
+  color: var(--ink);
+  border-color: var(--white);
+}
+.btn--line {
+  --btn-bg: transparent;
+  --btn-fg: var(--fg);
+  --btn-bd: color-mix(in srgb, var(--fg) 30%, transparent);
+}
+.btn--line-light {
+  --btn-bg: transparent;
+  --btn-fg: var(--white);
+  --btn-bd: rgba(247, 242, 234, 0.3);
+}
+.btn--gold::before {
+  background: var(--white);
+}
+.btn--gold:hover {
+  color: var(--ink);
+  border-color: var(--white);
+}
+
+/* Navigation -------------------------------------------------------------- */
+
+.nav__inner {
+  height: 92px;
+}
+.logo {
+  gap: 14px;
+}
+.logo__mark {
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+}
+.logo__text {
+  align-items: flex-start;
+  gap: 6px;
+}
+.logo__name {
+  font-family: var(--serif);
+  font-size: 1.02rem;
+  letter-spacing: 0.24em;
+  margin-right: 0;
+}
+.logo__cabinet {
+  font-family: var(--sans);
+  font-size: 0.56rem;
+  font-weight: 500;
+  letter-spacing: 0.38em;
+  margin-right: 0;
+  opacity: 0.7;
+}
+.nav__book {
+  border-radius: 999px;
+  border-color: var(--gold) !important;
+  outline: 0 !important;
+  background: var(--gold);
+  color: var(--ink) !important;
+  font-weight: 600;
+}
+.nav__book::before {
+  background: var(--fg) !important;
+  border-radius: inherit;
+}
+.nav__book:hover {
+  color: var(--bg) !important;
+}
+.nav__phone:hover {
+  color: var(--gold);
+}
+.nav__progress,
+html.is-dark .nav__progress {
+  background: var(--gold);
+}
+
+/* Menu plein écran */
+.menu {
+  background:
+    radial-gradient(ellipse at 85% 10%, rgba(194, 160, 107, 0.1), transparent 55%),
+    var(--ink);
+}
+.menu__book {
+  background: var(--gold);
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 16px 24px;
+}
+.menu__book:hover {
+  background: var(--white);
+}
+.menu__aside {
+  border-color: rgba(194, 160, 107, 0.22);
+}
+
+/* Intro : le sceau se trace sur fond noir ---------------------------------- */
+
+.intro {
+  background: transparent;
+}
+.intro__curtain {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(ellipse at center, rgba(191, 159, 108, 0.08), transparent 60%),
+    var(--ink);
+}
+.intro__seal {
+  width: min(52vmin, 380px);
+  aspect-ratio: 1;
+}
+.intro__seal .seal {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* Premier écran ------------------------------------------------------------ */
+
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  padding-top: clamp(110px, 13vh, 150px);
+  overflow: hidden;
+  color: var(--white);
+  background:
+    radial-gradient(ellipse at 78% 35%, rgba(191, 159, 108, 0.1), transparent 55%),
+    var(--ink);
+}
+.hero__watermark {
+  position: absolute;
+  right: -18vw;
+  top: 50%;
+  width: min(88vw, 1100px);
+  aspect-ratio: 1;
+  translate: 0 -50%;
+  opacity: 0.045;
+  pointer-events: none;
+}
+.hero__watermark .seal {
+  width: 100%;
+  height: 100%;
+}
+.hero__grid {
+  position: relative;
+  flex: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: clamp(40px, 7vw, 120px);
+  align-items: center;
+}
+.hero__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0 0 clamp(22px, 3vw, 36px);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.hero__eyebrow-rule {
+  width: 48px;
+  height: 1px;
+  background: var(--gold);
+}
+.hero .hero__title {
+  max-width: 12ch;
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(3rem, 6.4vw, 6.4rem);
+  line-height: 0.96;
+  letter-spacing: -0.035em;
+  color: var(--white);
+  font-variation-settings: 'opsz' 96;
+}
+.hero .hero__title em {
+  display: block;
+  font-style: italic;
+  color: var(--gold);
+}
+.hero .hero__lead {
+  max-width: 44ch;
+  margin: clamp(24px, 3vw, 36px) 0 clamp(30px, 3.5vw, 42px);
+  font-family: var(--sans);
+  font-size: clamp(1rem, 1.2vw, 1.12rem);
+  line-height: 1.75;
+  letter-spacing: 0;
+  color: rgba(247, 242, 234, 0.72);
+}
+.hero .hero__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+.hero__proofs {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 2.4vw, 36px);
+  max-width: 640px;
+  margin: clamp(32px, 4vh, 52px) 0 0;
+  padding: 0;
+}
+.hero__proofs li {
+  padding-top: 18px;
+  border-top: 1px solid rgba(194, 160, 107, 0.3);
+}
+.hero__proofs strong {
+  display: block;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(2.2rem, 3.2vw, 3rem);
+  line-height: 1;
+  color: var(--gold);
+}
+.hero__proofs span {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: rgba(247, 242, 234, 0.6);
+}
+.hero__visual-wrap {
+  position: relative;
+  padding: 0 0 0 18px;
+}
+/* Cadre d'or décalé derrière le visuel. */
+.hero__visual-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 18px -18px -18px 36px;
+  border: 1px solid rgba(194, 160, 107, 0.45);
+  pointer-events: none;
+}
+.hero__visual {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  max-height: 62svh;
+  margin-left: auto;
+  overflow: hidden;
+  background: var(--ink-2);
+}
+.hero__visual-inner {
+  position: absolute;
+  inset: -6% 0;
+}
+.hero__visual-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero__badge {
+  position: absolute;
+  left: -46px;
+  bottom: -46px;
+  width: clamp(120px, 11vw, 168px);
+  aspect-ratio: 1;
+  filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.45));
+}
+.hero__badge .seal {
+  width: 100%;
+  height: 100%;
+}
+/* Seule la couronne de texte tourne : le monogramme reste droit. */
+.hero__badge .seal__words {
+  transform-box: view-box;
+  transform-origin: 50% 50%;
+  animation: seal-spin 40s linear infinite;
+}
+@keyframes seal-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.hero__bar {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
+  align-items: center;
+  gap: 24px;
+  margin-top: clamp(36px, 5vh, 64px);
+  padding: 22px 0 26px;
+  border-top: 1px solid rgba(194, 160, 107, 0.22);
+}
+.hero .hero__info-item {
+  color: var(--white);
+}
+.hero .hero__info-item > svg {
+  color: var(--gold);
+}
+.hero .hero__info-item small {
+  color: var(--gold);
+}
+.hero .hero__info-item > span > span {
+  color: rgba(247, 242, 234, 0.55);
+}
+.hero a.hero__info-item:hover strong {
+  color: var(--gold);
+}
+.hero__scroll {
+  position: relative;
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(194, 160, 107, 0.5);
+  border-radius: 50%;
+}
+.hero__scroll span {
+  position: absolute;
+  left: 50%;
+  top: 13px;
+  width: 1px;
+  height: 18px;
+  background: var(--gold);
+  transform-origin: top;
+  animation: scroll-cue 2.2s var(--ease-io) infinite;
+}
+@keyframes scroll-cue {
+  0% {
+    transform: scaleY(0);
+  }
+  50% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  51% {
+    transform-origin: bottom;
+  }
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+}
+
+/* Bandeau défilant ---------------------------------------------------------- */
+
+.marquee {
+  overflow: hidden;
+  padding: clamp(22px, 2.6vw, 34px) 0;
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--fg);
+}
+.marquee__track {
+  display: flex;
+  width: max-content;
+  animation: marquee 48s linear infinite;
+}
+.marquee:hover .marquee__track {
+  animation-play-state: paused;
+}
+.marquee__row {
+  display: flex;
+}
+.marquee__item {
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(22px, 3vw, 44px);
+  padding-right: clamp(22px, 3vw, 44px);
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.6rem, 3.4vw, 3rem);
+  line-height: 1;
+  white-space: nowrap;
+}
+.marquee__item svg {
+  color: var(--gold);
+  flex-shrink: 0;
+}
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Cadres photo sur fond sombre ---------------------------------------------- */
+
+[data-theme="dark"] .photo-slot {
+  background:
+    repeating-linear-gradient(135deg, transparent 0 14px, rgba(194, 160, 107, 0.06) 14px 15px),
+    var(--ink-2);
+  color: var(--white);
+}
+[data-theme="dark"] .photo-slot::before {
+  border-color: rgba(194, 160, 107, 0.4);
+}
+[data-theme="dark"] .photo-slot__icon,
+[data-theme="dark"] .photo-slot__kicker {
+  color: var(--gold);
+}
+[data-theme="dark"] .photo-slot__format {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+[data-theme="dark"] .photo-slot__brief {
+  color: rgba(247, 242, 234, 0.7);
+}
+[data-theme="dark"] .photo-slot__tips li {
+  background: rgba(247, 242, 234, 0.04);
+  border-color: rgba(194, 160, 107, 0.22);
+  color: rgba(247, 242, 234, 0.75);
+}
+.photo-slot__format {
+  border-radius: 999px;
+  border-color: var(--blue);
+  color: var(--blue);
+}
+.photo-slot__tips li {
+  border-radius: 999px;
+}
+
+/* Sections ------------------------------------------------------------------ */
+
+.soin__tag {
+  border-radius: 999px;
+  color: var(--blue);
+}
+.soin.is-open .soin__plus {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--ink);
+}
+.soin__n,
+.engagement__n,
+.formation__year {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--blue);
+}
+.engagement {
+  transition: background 0.5s var(--ease);
+}
+.engagement:hover {
+  background: color-mix(in srgb, var(--gold) 8%, transparent);
+}
+.visite {
+  background:
+    radial-gradient(ellipse at 15% 0%, rgba(191, 159, 108, 0.08), transparent 55%),
+    var(--ink);
+}
+
+/* Fonds des sections claires : lavis chauds très légers à la place des gravures. */
+.soins,
+.etapes,
+.faq {
+  background: radial-gradient(ellipse 70% 60% at 100% 0%, rgba(191, 159, 108, 0.1), transparent 70%);
+}
+.focus {
+  background:
+    radial-gradient(ellipse 60% 70% at 0% 100%, rgba(255, 255, 255, 0.5), transparent 70%),
+    var(--paper);
+}
+.focus .about__points dt,
+.focus__n {
+  color: var(--blue);
+}
+.docteur,
+.infos {
+  background: linear-gradient(180deg, transparent, rgba(191, 159, 108, 0.06));
+}
+.docteur__quote {
+  background: color-mix(in srgb, var(--gold) 7%, var(--white));
+}
+.qualif {
+  background: transparent;
+}
+.qualif__sigle,
+.hero__cred-sigle {
+  color: var(--blue);
+}
+.frise__line span {
+  background: linear-gradient(var(--gold), var(--blue));
+}
+.formation:first-of-type::before {
+  background: var(--gold);
+  box-shadow: 0 0 0 5px rgba(194, 160, 107, 0.2);
+}
+.infos__reviews {
+  color: var(--blue);
+}
+
+/* Pied de page : sceau et grand nom ----------------------------------------- */
+
+.footer {
+  background:
+    radial-gradient(ellipse at 50% 100%, rgba(191, 159, 108, 0.08), transparent 60%),
+    var(--ink);
+  color: var(--white);
+}
+.footer__seal {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 18px;
+}
+.footer__word {
+  font-family: var(--serif);
+  font-size: clamp(3.6rem, 15vw, 19rem);
+  letter-spacing: 0.08em;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(194, 160, 107, 0.45);
+}
+
+/* Responsive ---------------------------------------------------------------- */
+
+@media (max-width: 899px) {
+  .hero__grid {
+    grid-template-columns: 1fr;
+    gap: 70px;
+  }
+  .hero__visual-wrap {
+    max-width: 460px;
+    margin: 0 auto 30px;
+    width: calc(100% - 40px);
+  }
+  .hero__visual {
+    max-height: none;
+  }
+  .hero__badge {
+    left: -22px;
+    bottom: -36px;
+    width: 116px;
+  }
+  .hero__watermark {
+    right: -50vw;
+    top: 30%;
+    width: 140vw;
+  }
+  .hero__bar {
+    grid-template-columns: 1fr 1fr;
+  }
+  .hero__scroll {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .logo__text {
+    display: none;
+  }
+  .hero .hero__title {
+    font-size: clamp(2.7rem, 12vw, 3.6rem);
+  }
+  .hero .hero__ctas .btn {
+    width: 100%;
+  }
+  .hero__proofs {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .hero__proofs li {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    padding: 14px 0;
+  }
+  .hero__proofs span {
+    margin: 0;
+  }
+  .hero__bar {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee__track,
+  .hero__badge .seal__words,
+  .hero__scroll span {
+    animation: none;
+  }
+}
+
+/* Grain de papier, sous les flux dorés (voir flows.css). */
+:root {
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.24 0 0 0 0 0.2 0 0 0 0 0.15 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Barre du haut : logo · parties principales · téléphone, rendez-vous, menu --------------------- */
+.nav__inner {
+  grid-template-columns: auto 1fr auto;
+}
+.brand {
+  justify-self: start;
+}
+.nav__links {
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  gap: clamp(18px, 2.2vw, 34px);
+}
+.nav__links a {
+  position: relative;
+  padding: 10px 0;
+  font: 500 0.68rem/1 var(--sans);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  opacity: 0.82;
+  transition: opacity 0.3s;
+}
+.nav__links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 2px;
+  height: 1px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.6s var(--ease);
+}
+.nav__links a:hover,
+.nav__links a.is-active {
+  opacity: 1;
+}
+.nav__links a:hover::after,
+.nav__links a.is-active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+.nav__links a.is-active {
+  color: var(--gold);
+}
+.nav__actions {
+  grid-column: 3;
+  gap: 22px;
+}
+.nav__menu {
+  gap: 12px;
+  padding: 10px 0 10px 4px;
+}
+.nav--open .nav__links {
+  visibility: hidden;
+}
+
+@media (max-width: 1240px) {
+  .nav__links {
+    display: none;
+  }
+}
+@media (max-width: 720px) {
+  .nav__inner {
+    grid-template-columns: auto 1fr auto;
+  }
+  .brand {
+    justify-self: start;
+  }
+  /* Sur téléphone : le logo et le menu ; le rendez-vous est dans la barre du bas. */
+  .nav__actions {
+    display: flex;
+  }
+}
+/* Menu ouvert : la barre garde un fond pour que la liste défile proprement dessous. */
+.nav--open {
+  background: var(--ink);
+}
+.nav__phone {
+  white-space: nowrap;
+}
+/* Entre 1100 et 1400 px, les liens prennent la place : le téléphone reste dans le menu et le pied de page. */
+@media (max-width: 1400px) {
+  .nav__phone {
+    display: none;
+  }
+}

@@ -1,10 +1,12 @@
 import { useRef } from 'react'
 import { gsap } from 'gsap'
 import { useGSAP } from '@gsap/react'
-import { CABINET, SOINS } from '../data'
+import { CABINET, PAGES, SOINS } from '../data'
+import { linkProps } from '../router'
 import { Heading, Fade } from './Heading'
 import { Button } from './Button'
 import { Calendar } from './Icons'
+import { Seal } from './Logo'
 import { MQ, scrollToId } from '../smoothScroll'
 
 export default function Footer() {
@@ -42,10 +44,10 @@ export default function Footer() {
 
         <div className="footer__grid">
           <div>
+            <Seal className="footer__seal" title="Sceau du cabinet dentaire Ibrahim Delikan" />
             <span className="footer__title">Cabinet</span>
             <span>{CABINET.doctor}</span>
             <span>{CABINET.title}</span>
-            <span>{CABINET.diploma}</span>
           </div>
           <div>
             <span className="footer__title">Adresse</span>
@@ -56,15 +58,16 @@ export default function Footer() {
           <div>
             <span className="footer__title">Soins</span>
             {SOINS.map((s) => (
-              <a
-                key={s.title}
-                href="#soins"
-                onClick={(e) => {
-                  e.preventDefault()
-                  scrollToId('soins')
-                }}
-              >
+              <a key={s.title} {...linkProps('soins')}>
                 {s.title}
+              </a>
+            ))}
+          </div>
+          <div>
+            <span className="footer__title">Pages</span>
+            {PAGES.map((p) => (
+              <a key={p.id} {...linkProps(p.id)}>
+                {p.label}
               </a>
             ))}
           </div>
@@ -72,9 +75,6 @@ export default function Footer() {
             <span className="footer__title">Liens</span>
             <a href={CABINET.doctolib} target="_blank" rel="noreferrer">
               Doctolib
-            </a>
-            <a href={CABINET.facebook} target="_blank" rel="noreferrer">
-              Facebook
             </a>
             <a href={CABINET.maps} target="_blank" rel="noreferrer">
               Google Maps

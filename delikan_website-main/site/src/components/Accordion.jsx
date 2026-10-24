@@ -1,16 +1,23 @@
 import { useRef, useState } from 'react'
-import * as m from 'motion/react-m'
-import { AnimatePresence } from 'motion/react'
 import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useGSAP } from '@gsap/react'
 import { MQ } from '../smoothScroll'
 
-const ease = [0.16, 1, 0.3, 1]
-
-// Liste éditoriale dépliable (soins, questions fréquentes). Une seule ligne ouverte à la fois.
-export default function Accordion({ id, items, initial = 0, className = '' }) {
-  const [open, setOpen] = useState(initial)
+// Liste éditoriale dépliable (soins, questions fréquentes).
+// Chaque ligne s'ouvre et se ferme indépendamment : rien ne se referme au-dessus, donc la page ne saute pas.
+// Le dépliage est une transition CSS (grid-template-rows 0fr → 1fr), le contenu reste dans la page.
+export default function Accordion({ id, items, initial = [0], className = '' }) {
+  const [open, setOpen] = useState(() => new Set(initial))
   const list = useRef(null)
+
+  const toggle = (i) =>
+    setOpen((prev) => {
+      const next = new Set(prev)
+      if (next.has(i)) next.delete(i)
+      else next.add(i)
+      return next
+    })
 
   useGSAP(
     () => {
@@ -39,7 +46,7 @@ export default function Accordion({ id, items, initial = 0, className = '' }) {
   return (
     <ul className={`soins__list ${className}`} ref={list}>
       {items.map((it, i) => {
-        const isOpen = open === i
+        const isOpen = open.has(i)
         return (
           <li key={it.title} className={`soin ${isOpen ? 'is-open' : ''}`}>
             <span className="soin__rule" aria-hidden />
@@ -47,27 +54,26 @@ export default function Accordion({ id, items, initial = 0, className = '' }) {
               className="soin__head"
               aria-expanded={isOpen}
               aria-controls={`${id}-${i}`}
-              onClick={() => setOpen(isOpen ? -1 : i)}
+              onClick={() => toggle(i)}
             >
               <span className="soin__n">{String(i + 1).padStart(2, '0')}</span>
               <span className="soin__title">{it.title}</span>
               {it.tag && <span className="soin__tag">{it.tag}</span>}
               <span className="soin__plus" aria-hidden />
             </button>
-            <AnimatePresence initial={false}>
-              {isOpen && (
-                <m.div
-                  id={`${id}-${i}`}
-                  className="soin__panel"
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: 'auto', opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.6, ease }}
-                >
-                  <div className="soin__body">{it.body}</div>
-                </m.div>
-              )}
-            </AnimatePresence>
+            <div
+              id={`${id}-${i}`}
+              className="soin__panel"
+              role="region"
+              aria-hidden={!isOpen}
+              inert={!isOpen}
+              // La hauteur de la page a changé : les animations au scroll recalculent leurs positions.
+              onTransitionEnd={(e) => e.propertyName === 'grid-template-rows' && ScrollTrigger.refresh()}
+            >
+              <div className="soin__panel-inner">
+                <div className="soin__body">{it.body}</div>
+              </div>
+            </div>
           </li>
         )
       })}

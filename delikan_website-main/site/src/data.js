@@ -10,44 +10,99 @@ export const CABINET = {
   phone: '04 48 22 14 24',
   phoneHref: 'tel:+33448221424',
   doctolib: 'https://www.doctolib.fr/dentiste/saint-esteve/ibrahim-delikan',
-  facebook: 'https://www.facebook.com/dribrahim.delikan/',
   maps: 'https://www.google.com/maps/place/Dr.+Delikan+Ibrahim+-+Chirurgien+Dentiste/@42.7161408,2.8527608,17z',
   mapsEmbed: 'https://www.google.com/maps?q=42.7161369,2.8553357&z=16&output=embed',
 }
 
-// Ordre de la page, pensé comme le parcours d'un patient : découvrir le cabinet, trouver son soin,
-// rencontrer le praticien, se projeter dans les lieux, lever ses doutes, puis venir.
-export const GROUPS = [
-  { id: 'decouvrir', label: 'Découvrir' },
-  { id: 'rencontrer', label: 'Rencontrer' },
-  { id: 'venir', label: 'Venir au cabinet' },
+// Le site est découpé en pages courtes, dans l'ordre du parcours d'un patient. Chaque page liste ses sections.
+// `bar` : libellé dans la barre du haut. L'accueil reste accessible par le logo.
+export const PAGES = [
+  {
+    id: 'accueil',
+    label: 'Accueil',
+    desc: 'Le cabinet en un coup d’œil',
+    sections: ['bienvenue', 'explorer'],
+  },
+  {
+    id: 'cabinet',
+    label: 'Le cabinet',
+    bar: 'Le cabinet',
+    desc: 'Les lieux, nos engagements, votre première visite',
+    title: 'Votre cabinet',
+    em: 'à Saint-Estève.',
+    lead: 'Deux salles de soins, une radio 3D et une caméra d’empreinte numérique sur place, et une équipe qui prend le temps de vous recevoir et de vous expliquer.',
+    sections: ['visite', 'engagements', 'etapes'],
+  },
+  {
+    id: 'soins',
+    label: 'Les soins',
+    bar: 'Soins',
+    desc: 'Implants, chirurgie et soins de la famille',
+    title: 'Les soins',
+    em: 'au cabinet.',
+    lead: 'L’implantologie et la chirurgie orale au cœur de la pratique, et tous les soins du quotidien autour.',
+    sections: ['soins'],
+  },
+  {
+    id: 'implantologie',
+    label: 'Implantologie',
+    bar: 'Implantologie',
+    desc: 'Le traitement implantaire, pas à pas',
+    title: 'Implantologie',
+    em: '& chirurgie.',
+    lead: 'Remplacer une ou plusieurs dents par des implants, de l’étude du cas jusqu’au suivi, chirurgie comprise.',
+    sections: ['implants'],
+  },
+  {
+    id: 'docteur',
+    label: 'Dr Delikan',
+    bar: 'Dr Delikan',
+    desc: 'Parcours, formation et approche',
+    title: 'Dr Ibrahim Delikan,',
+    em: 'chirurgien-dentiste.',
+    lead: 'Bac +12, quatre diplômes universitaires en implantologie et en parodontologie, vingt ans de formation de Créteil à Nantes puis à Lyon.',
+    sections: ['docteur'],
+  },
+  {
+    id: 'contact',
+    label: 'Contact',
+    bar: 'Contact',
+    desc: 'Horaires, plan d’accès, questions fréquentes',
+    title: 'Contact',
+    em: '& accès.',
+    lead: 'Prendre rendez-vous, venir au cabinet, et trouver les réponses aux questions les plus fréquentes.',
+    sections: ['infos', 'faq'],
+  },
 ]
 
 export const SECTIONS = [
-  { id: 'cabinet', label: 'Le cabinet', desc: 'Notre approche du soin', group: 'decouvrir' },
-  { id: 'soins', label: 'Les soins', desc: 'Implants, chirurgie et soins', group: 'decouvrir' },
-  { id: 'implants', label: 'Implantologie', desc: 'Le cœur de la pratique', group: 'decouvrir' },
-  { id: 'docteur', label: 'Le Dr Delikan', desc: 'Parcours et formation', group: 'rencontrer' },
-  { id: 'visite', label: 'Visite', desc: 'Les lieux en images', group: 'rencontrer' },
-  { id: 'engagements', label: 'Engagements', desc: 'Hygiène, devis, écoute', group: 'rencontrer' },
-  { id: 'etapes', label: 'Première visite', desc: 'Comment ça se passe', group: 'venir' },
-  { id: 'faq', label: 'Questions', desc: 'Remboursements, urgences…', group: 'venir' },
-  { id: 'infos', label: 'Infos pratiques', desc: 'Horaires, plan, contact', group: 'venir' },
+  { id: 'bienvenue', label: 'Bienvenue', desc: 'Notre approche du soin' },
+  { id: 'explorer', label: 'Explorer', desc: 'Les pages du site' },
+  { id: 'visite', label: 'Visite du cabinet', desc: 'Accueil, salles de soins, radio 3D en images' },
+  { id: 'engagements', label: 'Nos engagements', desc: 'Hygiène, transparence, suivi dans la durée' },
+  { id: 'etapes', label: 'Votre première visite', desc: 'Du rendez-vous au plan de traitement' },
+  { id: 'soins', label: 'Les soins', desc: 'Implants, chirurgie et soins' },
+  { id: 'implants', label: 'Le traitement', desc: 'Avantages et étapes' },
+  { id: 'docteur', label: 'Le praticien', desc: 'Parcours et formation' },
+  { id: 'infos', label: 'Nous trouver', desc: 'Horaires, plan d’accès, téléphone' },
+  { id: 'faq', label: 'Questions fréquentes', desc: 'Remboursements, urgences, implants' },
 ]
 
-// Index affiché dans les étiquettes de section (« 03 — Implants »), dérivé de l'ordre ci-dessus.
-export const sectionIndex = (id) => String(SECTIONS.findIndex((s) => s.id === id) + 1).padStart(2, '0')
+export const pageOf = (sectionId) => PAGES.find((p) => p.sections.includes(sectionId)) || PAGES[0]
+
+// Index affiché dans les étiquettes de section (« 02 — Engagements »), relatif à sa page.
+export const sectionIndex = (id) => String(pageOf(id).sections.indexOf(id) + 1).padStart(2, '0')
 
 // Photos à prendre. Tant que `ready` est faux, le site affiche un cadre avec la consigne à la place.
 // Pour mettre une photo en place : déposer `public/media/<nom>.jpg`, lancer `node scripts/optimize-images.mjs`,
 // puis passer `ready: true`.
 export const PHOTOS = {
   portrait: {
-    title: 'Portrait du Dr Delikan',
+    title: 'Portrait officiel du Dr Delikan',
     format: 'Vertical 4:5',
     brief:
-      'Le Dr Delikan en tenue de travail, cadré à mi-buste, regard vers l’objectif et sourire naturel. Lumière douce d’une fenêtre sur le côté, salle de soins floue en arrière-plan.',
-    tips: ['Pas de flash', 'Mode portrait du téléphone', 'Tenue propre et repassée'],
+      'Le Dr Delikan en costume sombre, chemise claire, debout et bras croisés ou mains jointes, cadré à mi-cuisses. Regard assuré vers l’objectif, fond sobre (mur clair du cabinet ou fond studio), lumière douce sur le côté.',
+    tips: ['Photographe conseillé', 'Costume ajusté, sans cravate voyante', 'Pas de flash direct'],
   },
   hero: {
     title: 'Le praticien au travail',
@@ -88,15 +143,21 @@ export const PHOTOS = {
     tips: ['Même heure et même lumière que la photo précédente'],
   },
   radio: {
-    title: 'La radiologie',
+    title: 'La radio 3D',
     format: 'Vertical 4:5',
-    brief: 'L’appareil de radio panoramique en entier, porte ouverte, pièce bien éclairée.',
+    brief: 'L’appareil de radiographie 3D en entier, porte ouverte, pièce bien éclairée. Si possible, l’écran affiche une image 3D anonyme.',
     tips: ['Reculer au maximum', 'Aucun écran patient visible'],
   },
 }
 
 // Le praticien. Bio rédigée à partir des diplômes connus : à faire relire par le Dr Delikan.
 export const DOCTOR = {
+  chiffres: [
+    { n: 'Bac +12', t: 'années d’études supérieures' },
+    { n: '4', t: 'diplômes universitaires en implantologie et parodontologie' },
+    { n: '20', t: 'ans de formation continue, de 2003 à 2023' },
+    { n: '3', t: 'universités : Créteil, Nantes et Lyon' },
+  ],
   intro:
     'L’implantologie et la chirurgie orale sont au cœur de sa pratique. Formé à l’implantologie chirurgicale dès 2003, le Dr Ibrahim Delikan n’a jamais cessé de se perfectionner : quatre diplômes universitaires en vingt ans, de Créteil à Nantes puis à Lyon.',
   approche:
@@ -161,7 +222,7 @@ export const SOINS = [
     tag: 'Cœur de pratique',
     points: [
       'Remplacement d’une dent, de plusieurs dents ou de toute une arcade',
-      'Étude préalable du volume osseux à partir des radiographies',
+      'Étude du volume osseux en 3D, grâce à la radio 3D du cabinet',
       'Pose de l’implant au cabinet, sous anesthésie locale',
       'Couronne ou bridge fixé sur implants : une dent fixe, sans toucher aux dents voisines',
     ],
@@ -185,7 +246,7 @@ export const SOINS = [
       'Greffe et comblement osseux',
       'Comblement de sinus (sinus lift)',
       'Préservation de l’os au moment d’une extraction',
-      'Choix de la technique selon l’examen radiologique',
+      'Choix de la technique d’après l’examen en 3D',
     ],
   },
   {
@@ -202,6 +263,7 @@ export const SOINS = [
     title: 'Prothèses',
     text: 'Couronnes, bridges et prothèses pour retrouver confort de mastication et sourire, sur dents naturelles ou sur implants. Un devis détaillé vous est remis avant tout traitement.',
     points: [
+      'Empreintes numériques à la caméra intra-orale, sans pâte',
       'Couronnes et bridges sur implants',
       'Prothèses amovibles stabilisées sur implants',
       'Couronnes céramiques, inlays et onlays sur dents naturelles',
@@ -253,7 +315,7 @@ export const FOCUS = {
     { title: 'Un résultat naturel', text: 'La couronne est réalisée sur mesure, dans la teinte de vos dents.' },
   ],
   etapes: [
-    { title: 'Consultation et bilan', text: 'Examen, radiographies et, si besoin, examen 3D pour mesurer l’os disponible.' },
+    { title: 'Consultation et bilan', text: 'Examen, puis radio 3D au cabinet pour mesurer précisément l’os disponible.' },
     { title: 'Plan de traitement et devis', text: 'Les options vous sont expliquées, avec un devis détaillé avant toute décision.' },
     { title: 'Pose de l’implant', text: 'Sous anesthésie locale, au cabinet. Une dent provisoire peut être prévue.' },
     { title: 'Cicatrisation', text: 'L’implant se lie à l’os pendant quelques mois, selon les situations.' },
@@ -269,8 +331,8 @@ export const ENGAGEMENTS = [
     text: 'Instruments stérilisés et tracés, matériel à usage unique dès que possible : le protocole est le même pour chaque patient.',
   },
   {
-    title: 'Radiologie sur place',
-    text: 'La radio panoramique au cabinet permet un diagnostic complet dès la première consultation.',
+    title: 'Équipement de pointe',
+    text: 'Radio 3D et caméra d’empreinte numérique au cabinet : un diagnostic précis dès la première consultation, et des empreintes sans pâte.',
   },
   {
     title: 'Des devis clairs',
@@ -279,6 +341,10 @@ export const ENGAGEMENTS = [
   {
     title: 'Le temps d’expliquer',
     text: 'Vous savez ce qui est fait, pourquoi, et quelles sont les alternatives. Aucune décision n’est prise à votre place.',
+  },
+  {
+    title: 'Un suivi sur le long terme',
+    text: 'Le traitement ne s’arrête pas à la pose : contrôles réguliers, maintenance des implants et des gencives, pour des résultats qui durent.',
   },
 ]
 
@@ -309,7 +375,7 @@ export const FAQ = [
   },
   {
     q: 'Combien de temps dure un implant ?',
-    a: 'Bien entretenu, un implant peut durer de nombreuses années. Une bonne hygiène, des contrôles réguliers et l’arrêt du tabac comptent beaucoup dans sa longévité.',
+    a: 'Environ 95 % des implants sont toujours en place 10 ans après leur pose, et beaucoup durent bien au-delà de 20 ans. Une bonne hygiène, des contrôles réguliers et l’arrêt du tabac comptent beaucoup dans cette longévité.',
   },
   {
     q: 'Mes gencives saignent au brossage, est-ce grave ?',
@@ -328,7 +394,7 @@ export const VISITE = [
   { img: 'attente', title: 'La salle d’attente', text: 'Un espace chaleureux pour patienter en toute sérénité.' },
   { img: 'soins-2', title: 'La salle de soins', text: 'Un équipement moderne dans un environnement lumineux.' },
   { img: 'soins-1', title: 'Le second fauteuil', text: 'Deux salles de soins pour mieux vous recevoir.' },
-  { img: 'radio', title: 'La radiologie', text: 'Radio panoramique sur place pour un diagnostic précis.' },
+  { img: 'radio', title: 'La radio 3D', text: 'Une imagerie en trois dimensions sur place, pour un diagnostic précis.' },
 ]
 
 export const ETAPES = [
