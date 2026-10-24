@@ -1,4 +1,4 @@
-import { PAGES } from '../data'
+import { NAV_PAGES as PAGES } from '../data'
 import { linkProps } from '../router'
 
 // Bas de page : la page suivante du parcours, pour ne jamais finir dans une impasse.

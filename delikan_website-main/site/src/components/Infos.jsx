@@ -3,6 +3,7 @@ import { CABINET, HOURS, sectionIndex } from '../data'
 import { Heading, Label, Fade } from './Heading'
 import { Button } from './Button'
 import { Calendar, Phone, Pin } from './Icons'
+import MapConsent from './MapConsent'
 
 export default function Infos() {
   // Calculé côté client pour toujours refléter le jour du visiteur. getDay() : 0 = dimanche.
@@ -55,12 +56,7 @@ export default function Infos() {
 
           <Fade className="infos__col infos__map" delay={0.35}>
             <div className="infos__mapframe">
-              <iframe
-                title="Plan d’accès au cabinet"
-                src={CABINET.mapsEmbed}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
+              <MapConsent />
             </div>
             <a className="infos__address" href={CABINET.maps} target="_blank" rel="noreferrer">
               <Pin />
@@ -69,9 +65,6 @@ export default function Infos() {
                 <span>{CABINET.city}</span>
               </span>
               <span className="infos__go">Itinéraire</span>
-            </a>
-            <a className="infos__reviews" href={CABINET.maps} target="_blank" rel="noreferrer">
-              Lire les avis des patients sur Google →
             </a>
           </Fade>
         </div>

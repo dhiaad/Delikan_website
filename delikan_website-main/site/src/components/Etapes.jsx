@@ -4,6 +4,7 @@ import { useGSAP } from '@gsap/react'
 import { ETAPES, sectionIndex } from '../data'
 import { Heading, Label, Fade } from './Heading'
 import { MQ } from '../smoothScroll'
+import { TOOTH_PATH } from './Logo'
 
 export default function Etapes() {
   const root = useRef(null)
@@ -43,6 +44,14 @@ export default function Etapes() {
 
   return (
     <section className="section etapes" id="etapes" ref={root}>
+      {/* Ornement de transition depuis la partie précédente : filet d'or et dent au centre. */}
+      <div className="ornament" aria-hidden>
+        <span />
+        <svg viewBox="0 0 16 21" width="14" height="18">
+          <path d={TOOTH_PATH} fill="currentColor" />
+        </svg>
+        <span />
+      </div>
       <div className="container etapes__grid">
         <div className="etapes__head">
           <Label index={sectionIndex('etapes')}>Première visite</Label>

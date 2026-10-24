@@ -104,6 +104,7 @@ export default function Docteur() {
             <h3 className="h3">Parcours universitaire</h3>
             <p className="muted">
               Après son diplôme de chirurgien-dentiste, une formation continue en implantologie et en parodontologie.
+              Les D.U. et le C.E.S. sont des formations universitaires complémentaires : ce ne sont pas des spécialités.
             </p>
             <div className="docteur__qualifs">
               {QUALIFS.map((q) => (

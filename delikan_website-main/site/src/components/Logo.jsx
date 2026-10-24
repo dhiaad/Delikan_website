@@ -8,7 +8,7 @@ export const BRAND = { gold: '#c2a06b', ink: '#2e2925', ivory: '#f3ede4' }
 export const TOOTH_PATH =
   'M4 0C1.5 0 0 2 0 5c0 3 1 4.5 1.6 8 .5 3 .8 8 2.4 8 1.5 0 1.6-4 2.3-6.2.4-1.2.9-1.8 1.7-1.8s1.3.6 1.7 1.8c.7 2.2.8 6.2 2.3 6.2 1.6 0 1.9-5 2.4-8C15 9.5 16 8 16 5c0-3-1.5-5-4-5-1.7 0-2.6.8-4 .8S5.7 0 4 0z'
 
-const SERIF = "'Bodoni Moda', 'Bodoni MT', Didot, serif"
+const SERIF = "'Bodoni Moda Variable', 'Bodoni Moda', 'Bodoni MT', Didot, serif"
 
 // Sceau complet, viewBox 256 × 256. `disc` : pastille noire pleine (sinon fond transparent).
 // `compact` : sans les textes, pour les petites tailles (nav, favicon).
@@ -86,8 +86,8 @@ export function Logo({ className = '' }) {
     <span className={`logo ${className}`}>
       <Seal className="logo__mark" />
       <span className="logo__text">
-        <span className="logo__name">Ibrahim Delikan</span>
-        <span className="logo__cabinet">Chirurgien-dentiste</span>
+        <span className="logo__name">Cabinet Delikan</span>
+        <span className="logo__cabinet">Dr Ibrahim Delikan</span>
       </span>
     </span>
   )

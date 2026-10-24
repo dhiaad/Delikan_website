@@ -68,7 +68,7 @@ export default function Hero({ ready }) {
             Cabinet dentaire · Saint-Estève
           </p>
           <h1 className="hero__title">
-            Implantologie <em>&amp; chirurgie orale.</em>
+            Implantologie <em>&amp; chirurgie dentaire.</em>
           </h1>
           <p className="hero__lead">
             Le {CABINET.doctor} vous accueille pour vos implants, vos chirurgies et tous les soins de la famille, avec le
@@ -93,7 +93,7 @@ export default function Hero({ ready }) {
             </li>
             <li>
               <strong>Bac +12</strong>
-              <span>un praticien formé au plus haut niveau universitaire</span>
+              <span>années d’études supérieures, de la faculté aux diplômes universitaires</span>
             </li>
           </ul>
         </div>

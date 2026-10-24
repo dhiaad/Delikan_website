@@ -32,7 +32,7 @@ export default function Soins() {
           </Heading>
           <Fade>
             <p className="muted">
-              Implants, chirurgie orale et greffes osseuses sont au cœur de la pratique. Autour, l’ensemble des soins du
+              Implants, chirurgie dentaire et greffes osseuses sont au cœur de la pratique. Autour, l’ensemble des soins du
               quotidien est réalisé au cabinet, avec le même souci de confort et de clarté. Ouvrez chaque soin pour voir
               ce qu’il comprend.
             </p>

@@ -40,7 +40,7 @@ export const PAGES = [
     desc: 'Implants, chirurgie et soins de la famille',
     title: 'Les soins',
     em: 'au cabinet.',
-    lead: 'L’implantologie et la chirurgie orale au cœur de la pratique, et tous les soins du quotidien autour.',
+    lead: 'L’implantologie et la chirurgie dentaire au cœur de la pratique, et tous les soins du quotidien autour.',
     sections: ['soins'],
   },
   {
@@ -67,13 +67,71 @@ export const PAGES = [
     id: 'contact',
     label: 'Contact',
     bar: 'Contact',
-    desc: 'Horaires, plan d’accès, questions fréquentes',
+    desc: 'Horaires, accès, honoraires, questions fréquentes',
     title: 'Contact',
     em: '& accès.',
-    lead: 'Prendre rendez-vous, venir au cabinet, et trouver les réponses aux questions les plus fréquentes.',
-    sections: ['infos', 'faq'],
+    lead: 'Prendre rendez-vous, venir au cabinet, connaître les honoraires, et trouver les réponses aux questions les plus fréquentes.',
+    sections: ['infos', 'honoraires', 'faq'],
+  },
+  // Pages légales : accessibles depuis le pied de page, absentes de la barre et du menu.
+  {
+    id: 'mentions-legales',
+    hidden: true,
+    label: 'Mentions légales',
+    desc: 'Éditeur, hébergeur, règles professionnelles',
+    title: 'Mentions',
+    em: 'légales.',
+    lead: 'Informations prévues par la loi pour la confiance dans l’économie numérique (LCEN, art. 6) et par le Code de la santé publique.',
+    sections: ['mentions'],
+  },
+  {
+    id: 'confidentialite',
+    hidden: true,
+    label: 'Confidentialité',
+    desc: 'Données personnelles et cookies',
+    title: 'Confidentialité',
+    em: '& cookies.',
+    lead: 'Ce site ne collecte aucune donnée de santé et ne dépose aucun cookie sans votre accord.',
+    sections: ['confidentialite'],
   },
 ]
+// Pages visibles dans la navigation (menu, cartes de l'accueil, page suivante).
+export const NAV_PAGES = PAGES.filter((p) => !p.hidden)
+
+export const LEGAL = {
+  editeur: 'Dr Ibrahim Delikan, chirurgien-dentiste, exerçant à titre libéral',
+  email: null, // adresse e-mail de contact du cabinet
+  siret: null, // numéro SIRET du cabinet
+  structure: null, // forme d'exercice si société (SELARL, SCM…), sinon laisser null
+  diplome: null, // ex. « Diplôme d'État de docteur en chirurgie dentaire, Université de … (année) »
+  ordre: 'Ordre national des chirurgiens-dentistes, conseil départemental des Pyrénées-Orientales',
+  directeur: 'Dr Ibrahim Delikan',
+  hebergeur: null, // nom, adresse et téléphone de l'hébergeur du site (ex. Netlify, OVH…)
+  conception: 'Site conçu sur mesure pour le cabinet.',
+  accessibilite: null, // accès au cabinet : plain-pied, ascenseur, place PMR… (registre public d'accessibilité)
+  convention: 'Votre chirurgien-dentiste est conventionné.',
+}
+
+// Honoraires : au moins 5 à 10 prestations les plus pratiquées (recommandations ordinales, art. R.4127-240 CSP).
+// `prix: null` = à compléter. Les soins conventionnés suivent les tarifs de l'Assurance Maladie ;
+// les prothèses, implants et blanchiment sont à honoraires libres, annoncés par devis.
+export const HONORAIRES = {
+  conventionnes: [
+    { acte: 'Consultation', prix: null },
+    { acte: 'Détartrage complet', prix: null },
+    { acte: 'Soin d’une carie (une face)', prix: null },
+    { acte: 'Dévitalisation d’une molaire', prix: null },
+    { acte: 'Extraction d’une dent permanente', prix: null },
+  ],
+  libres: [
+    { acte: 'Couronne céramique', prix: null },
+    { acte: 'Implant (pose, hors couronne)', prix: null },
+    { acte: 'Couronne sur implant', prix: null },
+    { acte: 'Prothèse amovible complète (une arcade)', prix: null },
+    { acte: 'Blanchiment (non remboursé)', prix: null },
+  ],
+  paiements: null, // ex. ['Carte bancaire', 'Espèces', 'Chèque'] — aucun mode ne peut être imposé
+}
 
 export const SECTIONS = [
   { id: 'bienvenue', label: 'Bienvenue', desc: 'Notre approche du soin' },
@@ -85,7 +143,10 @@ export const SECTIONS = [
   { id: 'implants', label: 'Le traitement', desc: 'Avantages et étapes' },
   { id: 'docteur', label: 'Le praticien', desc: 'Parcours et formation' },
   { id: 'infos', label: 'Nous trouver', desc: 'Horaires, plan d’accès, téléphone' },
+  { id: 'honoraires', label: 'Honoraires', desc: 'Tarifs, paiement, accès aux soins' },
   { id: 'faq', label: 'Questions fréquentes', desc: 'Remboursements, urgences, implants' },
+  { id: 'mentions', label: 'Mentions légales', desc: '' },
+  { id: 'confidentialite', label: 'Confidentialité', desc: '' },
 ]
 
 export const pageOf = (sectionId) => PAGES.find((p) => p.sections.includes(sectionId)) || PAGES[0]
@@ -109,7 +170,7 @@ export const PHOTOS = {
     format: 'Horizontal 16:9',
     brief:
       'Le Dr Delikan au fauteuil avec son assistante, en plein soin. Le patient est vu de dos ou de profil, sans visage reconnaissable. Toute la salle est éclairée.',
-    tips: ['Un membre de l’équipe peut jouer le patient', 'Plan large, à hauteur d’yeux', 'Aucun écran ni dossier lisible'],
+    tips: ['Un membre de l’équipe joue le patient', 'Autorisation écrite de chaque personne visible', 'Aucun écran ni dossier lisible'],
   },
   entree: {
     title: 'L’entrée du cabinet',
@@ -122,7 +183,7 @@ export const PHOTOS = {
     title: 'L’accueil',
     format: 'Vertical 4:5',
     brief: 'Le comptoir d’accueil, rangé, avec si possible la secrétaire souriante derrière.',
-    tips: ['Ranger papiers et câbles', 'Lumières allumées'],
+    tips: ['Ranger papiers et câbles', 'Autorisation écrite de la personne photographiée'],
   },
   attente: {
     title: 'La salle d’attente',
@@ -153,18 +214,19 @@ export const PHOTOS = {
 // Le praticien. Bio rédigée à partir des diplômes connus : à faire relire par le Dr Delikan.
 export const DOCTOR = {
   chiffres: [
+    // Chaque chiffre doit pouvoir être justifié (diplômes) en cas de demande de l'Ordre.
     { n: 'Bac +12', t: 'années d’études supérieures' },
     { n: '4', t: 'diplômes universitaires en implantologie et parodontologie' },
     { n: '20', t: 'ans de formation continue, de 2003 à 2023' },
     { n: '3', t: 'universités : Créteil, Nantes et Lyon' },
   ],
   intro:
-    'L’implantologie et la chirurgie orale sont au cœur de sa pratique. Formé à l’implantologie chirurgicale dès 2003, le Dr Ibrahim Delikan n’a jamais cessé de se perfectionner : quatre diplômes universitaires en vingt ans, de Créteil à Nantes puis à Lyon.',
+    'L’implantologie et la chirurgie dentaire sont au cœur de sa pratique. Formé à l’implantologie chirurgicale dès 2003, le Dr Ibrahim Delikan n’a jamais cessé de se perfectionner : quatre diplômes universitaires en vingt ans, de Créteil à Nantes puis à Lyon.',
   approche:
     'Au cabinet de Saint-Estève, il réalise lui-même chaque étape, de la chirurgie à la pose de la dent définitive, et soigne aussi toute la famille au quotidien. Sa règle : expliquer avant d’agir, proposer plusieurs options quand elles existent, et ne jamais presser une décision.',
   domaines: [
     { title: 'Implantologie', text: 'Le cœur de sa pratique : trois diplômes universitaires, de la dent unitaire à l’arcade complète.' },
-    { title: 'Chirurgie orale', text: 'Extractions complexes, dents de sagesse, greffes osseuses et comblements de sinus.' },
+    { title: 'Odontologie chirurgicale', text: 'Extractions complexes, dents de sagesse, greffes osseuses et comblements de sinus.' },
     { title: 'Parodontologie', text: 'C.E.S. de l’université de Nantes : gencives, déchaussement, maintenance.' },
     { title: 'Soins de toute la famille', text: 'Prévention, soins courants, prothèses et blanchiment.' },
   ],
@@ -214,7 +276,7 @@ export const HOURS = [
   { day: 'Dimanche', time: 'Fermé' },
 ]
 
-// L'implantologie et la chirurgie orale sont le cœur de la pratique : elles ouvrent la liste.
+// L'implantologie et l'odontologie chirurgicale sont le cœur de la pratique : elles ouvrent la liste.
 export const SOINS = [
   {
     title: 'Implantologie',
@@ -228,7 +290,7 @@ export const SOINS = [
     ],
   },
   {
-    title: 'Chirurgie orale',
+    title: 'Odontologie chirurgicale',
     text: 'Extractions, dents de sagesse et interventions chirurgicales réalisées au cabinet, sous anesthésie locale, avec des consignes claires avant et après.',
     tag: 'Cœur de pratique',
     points: [
@@ -312,7 +374,7 @@ export const FOCUS = {
     { title: 'Des dents fixes', text: 'Fini la prothèse qui bouge : on mange, on parle et on sourit sans y penser.' },
     { title: 'Les dents voisines préservées', text: 'Contrairement à un bridge classique, il n’est pas nécessaire de tailler les dents saines.' },
     { title: 'L’os entretenu', text: 'L’implant sollicite l’os de la mâchoire, qui se résorbe moins qu’en l’absence de dent.' },
-    { title: 'Un résultat naturel', text: 'La couronne est réalisée sur mesure, dans la teinte de vos dents.' },
+    { title: 'Un aspect naturel', text: 'La couronne est réalisée sur mesure, dans la teinte de vos dents.' },
   ],
   etapes: [
     { title: 'Consultation et bilan', text: 'Examen, puis radio 3D au cabinet pour mesurer précisément l’os disponible.' },
@@ -328,15 +390,15 @@ export const FOCUS = {
 export const ENGAGEMENTS = [
   {
     title: 'Hygiène et stérilisation',
-    text: 'Instruments stérilisés et tracés, matériel à usage unique dès que possible : le protocole est le même pour chaque patient.',
+    text: 'Stérilisation et traçabilité des instruments selon les règles en vigueur, avec le même protocole pour chaque patient.',
   },
   {
-    title: 'Équipement de pointe',
-    text: 'Radio 3D et caméra d’empreinte numérique au cabinet : un diagnostic précis dès la première consultation, et des empreintes sans pâte.',
+    title: 'Équipement sur place',
+    text: 'Radio 3D et caméra d’empreinte numérique au cabinet : l’imagerie est faite sur place, et les empreintes se prennent sans pâte.',
   },
   {
     title: 'Des devis clairs',
-    text: 'Cabinet conventionné : chaque traitement est expliqué et chiffré avant de commencer, avec la part remboursée.',
+    text: 'Cabinet conventionné : un devis détaillé est remis avant tout traitement prothétique ou implantaire, avec la part remboursée.',
   },
   {
     title: 'Le temps d’expliquer',
@@ -367,7 +429,7 @@ export const FAQ = [
   },
   {
     q: 'La pose d’un implant est-elle douloureuse ?',
-    a: 'L’intervention se fait sous anesthésie locale et n’est pas douloureuse. Les jours suivants, une gêne ou un gonflement modérés sont possibles ; ils se gèrent avec les médicaments prescrits.',
+    a: 'L’intervention se fait sous anesthésie locale : elle est en général peu ou pas douloureuse. Les jours suivants, une gêne ou un gonflement modérés sont possibles ; ils se gèrent avec les médicaments prescrits.',
   },
   {
     q: 'On m’a dit que je n’avais pas assez d’os pour un implant. Est-ce possible quand même ?',
@@ -375,7 +437,8 @@ export const FAQ = [
   },
   {
     q: 'Combien de temps dure un implant ?',
-    a: 'Environ 95 % des implants sont toujours en place 10 ans après leur pose, et beaucoup durent bien au-delà de 20 ans. Une bonne hygiène, des contrôles réguliers et l’arrêt du tabac comptent beaucoup dans cette longévité.',
+    a: 'Une revue scientifique de référence (Howe et al., Journal of Dentistry, 2019) estime qu’environ 93 à 96 % des implants sont toujours en place 10 ans après leur pose. Ce chiffre est une moyenne : une bonne hygiène, des contrôles réguliers et l’arrêt du tabac comptent beaucoup, et le risque augmente avec l’âge et certaines maladies.',
+    source: 'https://doi.org/10.1016/j.jdent.2019.03.008',
   },
   {
     q: 'Mes gencives saignent au brossage, est-ce grave ?',

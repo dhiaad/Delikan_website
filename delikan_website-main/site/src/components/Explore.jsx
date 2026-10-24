@@ -1,4 +1,4 @@
-import { PAGES, sectionIndex } from '../data'
+import { NAV_PAGES as PAGES, sectionIndex } from '../data'
 import { linkProps } from '../router'
 import { Heading, Label, Fade } from './Heading'
 

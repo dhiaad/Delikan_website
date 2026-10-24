@@ -4,7 +4,22 @@ import { Button } from './Button'
 import { Phone } from './Icons'
 import Accordion from './Accordion'
 
-const items = FAQ.map((f) => ({ title: f.q, body: <p>{f.a}</p> }))
+const items = FAQ.map((f) => ({
+  title: f.q,
+  body: (
+    <>
+      <p>{f.a}</p>
+      {f.source && (
+        <p className="faq__source">
+          Source :{' '}
+          <a href={f.source} target="_blank" rel="noreferrer">
+            consulter l’étude
+          </a>
+        </p>
+      )}
+    </>
+  ),
+}))
 
 export default function Faq() {
   return (

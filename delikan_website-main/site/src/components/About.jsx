@@ -3,7 +3,7 @@ import { Heading, Label, Fade } from './Heading'
 import RevealImage from './RevealImage'
 
 const POINTS = [
-  { k: 'Cœur de pratique', v: 'Implantologie et chirurgie orale' },
+  { k: 'Cœur de pratique', v: 'Implantologie et odontologie chirurgicale' },
   { k: 'Pour qui', v: 'Toute la famille, des enfants aux seniors' },
   { k: 'Sur place', v: 'Deux salles de soins, une radio 3D et une caméra d’empreinte numérique' },
   { k: 'Rendez-vous', v: 'En ligne sur Doctolib à toute heure, ou par téléphone' },

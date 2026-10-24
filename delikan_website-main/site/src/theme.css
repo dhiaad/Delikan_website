@@ -33,7 +33,7 @@
   --fg-soft: #675e54;
   --line: rgba(46, 41, 37, 0.12);
 
-  --serif: 'Bodoni Moda', 'Bodoni MT', Didot, Georgia, serif;
+  --serif: 'Bodoni Moda Variable', 'Bodoni Moda', 'Bodoni MT', Didot, Georgia, serif;
   --logo-serif: var(--serif);
   --sans: 'Montserrat', system-ui, -apple-system, sans-serif;
 }

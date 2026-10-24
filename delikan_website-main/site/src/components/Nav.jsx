@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import * as m from 'motion/react-m'
 import { AnimatePresence } from 'motion/react'
-import { CABINET, HOURS, PAGES, SECTIONS } from '../data'
+import { CABINET, HOURS, NAV_PAGES as PAGES, SECTIONS } from '../data'
 import { linkProps } from '../router'
 import { Logo } from './Logo'
 import { Calendar, Clock, Phone, Pin } from './Icons'
@@ -71,6 +71,11 @@ export default function Nav({ page }) {
         <div className="nav__inner">
           <a className="brand" {...linkProps('accueil', null, close)} aria-label="Cabinet Delikan, accueil">
             <Logo />
+          </a>
+
+          {/* Nom du cabinet au centre, quand les pages passent sur la seconde rangée. */}
+          <a className="nav__name" {...linkProps('accueil', null, close)} aria-hidden tabIndex={-1}>
+            <span>Cabinet</span> Delikan
           </a>
 
           {/* Les pages du site : dans la barre sur grand écran, en rangée défilante sous le logo ailleurs. */}

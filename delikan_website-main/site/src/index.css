@@ -2416,8 +2416,7 @@ a.hero__info-item:hover strong {
 }
 
 /* Cartes : coins nets et cadre intérieur, comme un certificat. */
-.hero__cred,
-.qualif,
+/* Pastilles des sigles en losange (la carte elle-même reste droite). */
 .hero__cred-sigle,
 .qualif__sigle {
   border-radius: 0;
@@ -2645,10 +2644,6 @@ main > section > .visite__track {
 .menu__plate .engraving {
   width: 100%;
 }
-/* Les cartes claires gardent un texte foncé, même quand la page passe en sombre. */
-.qualif,
-.diplomes__plaque,
-
 .bg-plate--etapes .engraving {
   opacity: 0.3;
 }

@@ -1,6 +1,6 @@
 import { TOOTH_PATH } from './Logo'
 
-const WORDS = ['Implantologie', 'Chirurgie orale', 'Greffe osseuse', 'Parodontologie', 'Prothèses sur implants', 'Soins de la famille']
+const WORDS = ['Implantologie', 'Odontologie chirurgicale', 'Greffe osseuse', 'Parodontologie', 'Prothèses sur implants', 'Soins de la famille']
 
 // Bandeau qui défile en continu sous le premier écran (figé avec « réduire les animations »).
 export default function Marquee() {

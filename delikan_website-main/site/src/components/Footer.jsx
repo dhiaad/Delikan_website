@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import { gsap } from 'gsap'
 import { useGSAP } from '@gsap/react'
-import { CABINET, PAGES, SOINS } from '../data'
+import { CABINET, NAV_PAGES as PAGES, SOINS } from '../data'
 import { linkProps } from '../router'
 import { Heading, Fade } from './Heading'
 import { Button } from './Button'
@@ -94,10 +94,27 @@ export default function Footer() {
         ))}
       </div>
 
+      {/* Mention ordinale : les orientations ne sont pas des spécialités. Emplacement de la bannière de l'Ordre. */}
+      <div className="container footer__ordre">
+        <p>
+          {CABINET.doctor}, chirurgien-dentiste (omnipratique), inscrit à l’Ordre national des chirurgiens-dentistes ·
+          RPPS {CABINET.rpps}. L’implantologie, l’odontologie chirurgicale et la parodontologie sont des orientations de sa
+          pratique, non des spécialités.
+        </p>
+        <span className="todo">
+          À compléter : bannière de l’Ordre, à générer sur ordre-chirurgiens-dentistes.fr/banniere avec le n° RPPS
+        </span>
+      </div>
+
       <div className="container footer__legal">
         <span>
           © {new Date().getFullYear()} Cabinet dentaire du {CABINET.doctor} · Saint-Estève
         </span>
+        <nav className="footer__legal-links" aria-label="Informations légales">
+          <a {...linkProps('mentions-legales')}>Mentions légales</a>
+          <a {...linkProps('confidentialite')}>Confidentialité &amp; cookies</a>
+          <a {...linkProps('contact', 'honoraires')}>Honoraires</a>
+        </nav>
         <a
           href="#top"
           onClick={(e) => {

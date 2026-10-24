@@ -22,6 +22,8 @@ import Engagements from './components/Engagements'
 import Faq from './components/Faq'
 import Etapes from './components/Etapes'
 import Infos from './components/Infos'
+import Honoraires from './components/Honoraires'
+import { Mentions, Confidentialite } from './components/Legal'
 import Footer from './components/Footer'
 import MobileBar from './components/MobileBar'
 
@@ -35,7 +37,10 @@ const SECTION_COMPONENTS = {
   implants: Focus,
   docteur: Docteur,
   infos: Infos,
+  honoraires: Honoraires,
   faq: Faq,
+  mentions: Mentions,
+  confidentialite: Confidentialite,
 }
 
 export default function App() {
@@ -119,7 +124,7 @@ export default function App() {
             const Section = SECTION_COMPONENTS[id]
             return <Section key={id} />
           })}
-          {page.id !== 'accueil' && <PageNext page={page} />}
+          {page.id !== 'accueil' && !page.hidden && <PageNext page={page} />}
         </main>
         <Footer />
         <MobileBar />

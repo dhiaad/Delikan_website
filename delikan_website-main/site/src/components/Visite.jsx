@@ -64,6 +64,31 @@ export default function Visite() {
     setCurrent(Math.min(VISITE.length, Math.round(el.scrollLeft / card) + 1))
   }
 
+  // Carrousel : flèches précédente / suivante, et glisser à la souris (le doigt fait défiler nativement).
+  const go = (dir) => {
+    const el = track.current
+    const card = el.firstElementChild?.offsetWidth || el.clientWidth
+    el.scrollBy({ left: dir * (card + 24), behavior: 'smooth' })
+  }
+  const drag = useRef(null)
+  const onDown = (e) => {
+    if (e.pointerType !== 'mouse' || window.getComputedStyle(track.current).overflowX !== 'auto') return
+    drag.current = { x: e.clientX, left: track.current.scrollLeft, moved: false }
+    track.current.setPointerCapture(e.pointerId)
+    track.current.classList.add('is-dragging')
+  }
+  const onMove = (e) => {
+    if (!drag.current) return
+    const dx = e.clientX - drag.current.x
+    if (Math.abs(dx) > 3) drag.current.moved = true
+    track.current.scrollLeft = drag.current.left - dx
+  }
+  const onUp = () => {
+    if (!drag.current) return
+    drag.current = null
+    track.current.classList.remove('is-dragging')
+  }
+
   return (
     <section className="visite" id="visite" data-theme="dark" ref={root}>
       <div className="visite__intro container">
@@ -82,9 +107,30 @@ export default function Visite() {
             <span />
           </span>
         </div>
+        <div className="visite__nav">
+          <button type="button" onClick={() => go(-1)} disabled={current === 1} aria-label="Photo précédente">
+            ←
+          </button>
+          <button
+            type="button"
+            onClick={() => go(1)}
+            disabled={current === VISITE.length}
+            aria-label="Photo suivante"
+          >
+            →
+          </button>
+        </div>
       </div>
 
-      <div className="visite__track" ref={track} onScroll={onSwipe}>
+      <div
+        className="visite__track"
+        ref={track}
+        onScroll={onSwipe}
+        onPointerDown={onDown}
+        onPointerMove={onMove}
+        onPointerUp={onUp}
+        onPointerCancel={onUp}
+      >
         {VISITE.map((v, i) => (
           <figure className="visite__card" key={v.img}>
             <div className="visite__img">
