@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <!-- A — Le Sceau. Exploration : textes en <text>, à vectoriser pour la version finale. -->
+  <defs>
+    <path id="ring" d="M 128 128 m -97 0 a 97 97 0 1 1 194 0 a 97 97 0 1 1 -194 0" />
+  </defs>
+  <circle cx="128" cy="128" r="124" fill="#15120f" />
+  <circle cx="128" cy="128" r="117" fill="none" stroke="#c2a06b" stroke-width="2.5" />
+  <circle cx="128" cy="128" r="111" fill="none" stroke="#c2a06b" stroke-width="0.8" />
+  <circle cx="128" cy="128" r="80" fill="none" stroke="#c2a06b" stroke-width="0.8" />
+  <text font-family="'Bodoni MT', Didot, serif" font-size="13.5" letter-spacing="4.2" fill="#c2a06b">
+    <textPath href="#ring" startOffset="0">CABINET DELIKAN · SAINT-ESTÈVE · IMPLANTOLOGIE ·</textPath>
+  </text>
+  <!-- Monogramme iD : le point du i devient un losange d'or. -->
+  <text x="137" y="160" text-anchor="middle" font-family="'Bodoni MT', Didot, serif" font-size="92" fill="#f3ece0">ıD</text>
+  <path d="M 98.5 80 L 104.5 88 L 98.5 96 L 92.5 88 Z" fill="#c2a06b" />
+  <line x1="98" y1="178" x2="158" y2="178" stroke="#c2a06b" stroke-width="0.8" />
+  <text x="128" y="193" text-anchor="middle" font-family="'Bodoni MT', Didot, serif" font-size="9" letter-spacing="3" fill="#c2a06b">66240</text>
+</svg>

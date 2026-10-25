@@ -1,10 +1,10 @@
 import { useRef } from 'react'
 import { gsap } from 'gsap'
 import { useGSAP } from '@gsap/react'
-import { ETAPES } from '../data'
+import { ETAPES, sectionIndex } from '../data'
 import { Heading, Label, Fade } from './Heading'
 import { MQ } from '../smoothScroll'
-import { Implant } from './Engravings'
+import { TOOTH_PATH } from './Logo'
 
 export default function Etapes() {
   const root = useRef(null)
@@ -44,10 +44,17 @@ export default function Etapes() {
 
   return (
     <section className="section etapes" id="etapes" ref={root}>
-      <Implant className="bg-plate bg-plate--etapes" />
+      {/* Ornement de transition depuis la partie précédente : filet d'or et dent au centre. */}
+      <div className="ornament" aria-hidden>
+        <span />
+        <svg viewBox="0 0 16 21" width="14" height="18">
+          <path d={TOOTH_PATH} fill="currentColor" />
+        </svg>
+        <span />
+      </div>
       <div className="container etapes__grid">
         <div className="etapes__head">
-          <Label index="06">Première visite</Label>
+          <Label index={sectionIndex('etapes')}>Première visite</Label>
           <Heading className="h2">
             Simple, <em>du début à la fin.</em>
           </Heading>

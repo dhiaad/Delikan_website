@@ -1,0 +1,421 @@
+/* ==========================================================================
+   DELIKAN · site en plusieurs pages
+   En-têtes de page, accueil (cartes), page suivante, menu par page, barre du haut toujours visible.
+   ========================================================================== */
+
+/* Arrivée d'une page : fondu court. */
+.page {
+  animation: page-in 0.7s var(--ease) both;
+}
+.page:focus {
+  outline: none;
+}
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
+
+/* En-tête des pages intérieures */
+.page-head {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(150px, 20vh, 210px) 0 clamp(60px, 8vw, 100px);
+  color: var(--white);
+  background:
+    radial-gradient(ellipse at 80% 20%, rgba(191, 159, 108, 0.1), transparent 55%),
+    var(--ink);
+}
+.page-head__watermark {
+  position: absolute;
+  right: -12vw;
+  top: 50%;
+  width: min(70vw, 820px);
+  aspect-ratio: 1;
+  translate: 0 -50%;
+  opacity: 0.05;
+  pointer-events: none;
+}
+.page-head__watermark .seal {
+  width: 100%;
+  height: 100%;
+}
+.page-head__grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 320px);
+  gap: clamp(30px, 6vw, 100px);
+  align-items: end;
+}
+.page-head__crumbs {
+  display: flex;
+  gap: 12px;
+  margin: 0 0 clamp(20px, 3vw, 34px);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: rgba(243, 237, 228, 0.55);
+}
+.page-head__crumbs a {
+  color: var(--gold);
+  text-decoration: none;
+}
+.page-head__crumbs a:hover {
+  text-decoration: underline;
+}
+.page-head__title {
+  max-width: 14ch;
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(2.8rem, 6vw, 5.8rem);
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+  font-variation-settings: "opsz" 96;
+}
+.page-head__title em {
+  font-style: italic;
+  color: var(--gold);
+}
+.page-head__lead {
+  max-width: 52ch;
+  margin: clamp(20px, 2.6vw, 30px) 0 0;
+  font-size: clamp(1rem, 1.2vw, 1.1rem);
+  color: rgba(243, 237, 228, 0.72);
+}
+.page-head__aside {
+  display: grid;
+  gap: 22px;
+  justify-items: start;
+}
+.page-head__toc p {
+  margin: 0 0 10px;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.page-head__toc ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid rgba(191, 159, 108, 0.25);
+}
+.page-head__toc a {
+  display: flex;
+  gap: 14px;
+  align-items: baseline;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(191, 159, 108, 0.25);
+  font-size: 0.92rem;
+  text-decoration: none;
+  transition:
+    padding-left 0.5s var(--ease),
+    color 0.3s;
+}
+.page-head__toc a:hover {
+  padding-left: 8px;
+  color: var(--gold);
+}
+.page-head__toc small {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--gold);
+}
+
+/* Accueil : cartes vers les pages */
+.explore__head {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: clamp(30px, 6vw, 90px);
+  align-items: end;
+  margin-bottom: clamp(36px, 5vw, 64px);
+}
+.explore__head .h2 {
+  margin: 0;
+}
+.explore__head .muted {
+  margin: 0;
+  max-width: 46ch;
+}
+.explore__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: clamp(14px, 1.6vw, 22px);
+}
+.explore__item {
+  grid-column: span 2;
+}
+/* Soins et implantologie, cœur de la pratique : cartes larges, l'implantologie en sombre. */
+.explore__item--soins,
+.explore__item--implantologie {
+  grid-column: span 3;
+}
+.explore__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: clamp(200px, 20vw, 260px);
+  padding: clamp(24px, 2.4vw, 34px);
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--white) 70%, transparent);
+  text-decoration: none;
+  overflow: hidden;
+  isolation: isolate;
+  transition:
+    border-color 0.5s,
+    color 0.5s,
+    transform 0.6s var(--ease);
+}
+.explore__card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--ink);
+  transform: translateY(101%);
+  transition: transform 0.7s var(--ease);
+}
+.explore__card:hover {
+  border-color: var(--ink);
+  color: var(--white);
+  transform: translateY(-4px);
+}
+.explore__card:hover::before {
+  transform: none;
+}
+.explore__item--implantologie .explore__card {
+  background: var(--ink);
+  color: var(--white);
+  border-color: var(--ink);
+}
+.explore__item--implantologie .explore__card::before {
+  background: var(--blue-deep);
+}
+.explore__n {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--gold);
+}
+.explore__title {
+  margin-top: auto;
+  padding-top: 40px;
+  font-family: var(--serif);
+  font-size: clamp(1.7rem, 2.6vw, 2.4rem);
+  line-height: 1.05;
+}
+.explore__desc {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  opacity: 0.72;
+}
+.explore__go {
+  margin-top: 22px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.explore__go span {
+  display: inline-block;
+  transition: transform 0.5s var(--ease);
+}
+.explore__card:hover .explore__go span {
+  transform: translateX(6px);
+}
+
+/* Bas de page : page suivante */
+.page-next {
+  padding: 0 0 clamp(70px, 8vw, 110px);
+}
+.page-next__link {
+  display: grid;
+  gap: 8px;
+  padding: clamp(30px, 4vw, 50px) 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  text-decoration: none;
+}
+.page-next__kicker {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+.page-next__title {
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 5vw, 4.4rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+.page-next__title span {
+  display: inline-block;
+  color: var(--gold);
+  transition: transform 0.6s var(--ease);
+}
+.page-next__link:hover .page-next__title span {
+  transform: translateX(14px);
+}
+.page-next__desc {
+  color: var(--fg-soft);
+}
+
+/* Menu plein écran : une entrée par page, ses sections en pastilles dessous */
+.menu__groups {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  row-gap: clamp(20px, 3vw, 36px);
+}
+.menu__page {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 14px;
+  padding: 14px 0;
+  border-top: 1px solid rgba(191, 159, 108, 0.22);
+  text-decoration: none;
+}
+.menu__page small {
+  grid-row: span 2;
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--gold);
+}
+.menu__page strong {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(1.6rem, 2.4vw, 2.2rem);
+  line-height: 1.1;
+  transition: color 0.4s;
+}
+.menu__page em {
+  font-style: normal;
+  font-size: 0.82rem;
+  color: rgba(243, 237, 228, 0.55);
+}
+.menu__page:hover strong,
+.menu__group.is-current .menu__page strong {
+  color: var(--gold);
+}
+.menu__sections {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 4px 0 0;
+  padding: 0 0 0 30px;
+}
+.menu__sections a {
+  display: inline-block;
+  padding: 4px 12px;
+  border: 1px solid rgba(191, 159, 108, 0.28);
+  border-radius: 999px;
+  font-size: 0.74rem;
+  text-decoration: none;
+  color: rgba(243, 237, 228, 0.75);
+  transition:
+    border-color 0.3s,
+    color 0.3s;
+}
+.menu__sections a:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.footer__grid {
+  grid-template-columns: 1.3fr repeat(4, minmax(0, 1fr));
+}
+
+/* Barre du haut : les pages restent toujours visibles.
+   En dessous de 1240 px, elles passent sur une seconde rangée qui défile à l'horizontale. */
+@media (max-width: 1240px) {
+  .nav__inner {
+    height: auto;
+    grid-template-rows: 80px auto;
+    row-gap: 0;
+  }
+  .nav__links {
+    display: flex;
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-self: stretch;
+    gap: 26px;
+    padding: 12px 0;
+    border-top: 1px solid color-mix(in srgb, currentColor 14%, transparent);
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .nav__links::-webkit-scrollbar {
+    display: none;
+  }
+  .nav__links a {
+    flex-shrink: 0;
+  }
+  .hero {
+    padding-top: clamp(160px, 20vh, 190px);
+  }
+  .menu {
+    padding-top: 160px;
+  }
+}
+@media (max-width: 1100px) {
+  .footer__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 899px) {
+  .page-head__grid,
+  .explore__head {
+    grid-template-columns: 1fr;
+  }
+  .page-head__aside {
+    justify-items: stretch;
+  }
+  .explore__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .explore__item,
+  .explore__item--soins {
+    grid-column: span 1;
+  }
+  .explore__item--implantologie {
+    grid-column: 1 / -1;
+  }
+  .menu__groups {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 720px) {
+  .nav__inner {
+    grid-template-rows: 68px auto;
+  }
+  .explore__grid,
+  .menu__groups {
+    grid-template-columns: 1fr;
+  }
+  .explore__card {
+    min-height: 0;
+  }
+  .explore__title {
+    padding-top: 18px;
+  }
+  .page-head {
+    padding-top: 170px;
+  }
+  .footer__grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .page {
+    animation: none;
+  }
+}

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <!-- B — Le Pilier. Un D en deux pièces : le pilier (l'implant) et la forme qu'il porte (la couronne). -->
+  <rect width="256" height="256" rx="28" fill="#15120f" />
+  <g transform="translate(-6 0)" fill="#c2a06b">
+    <!-- Pilier : sommet arrondi, base effilée comme une racine. -->
+    <path d="M 70 54 A 13 13 0 0 1 96 54 L 96 176 L 83 214 L 70 176 Z" />
+    <!-- Couronne : demi-anneau détaché du pilier. -->
+    <path d="M 108 41 A 87 87 0 0 1 108 215 L 108 189 A 61 61 0 0 0 108 67 Z" />
+  </g>
+</svg>

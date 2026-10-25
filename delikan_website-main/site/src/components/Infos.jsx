@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
-import { CABINET, HOURS } from '../data'
+import { CABINET, HOURS, sectionIndex } from '../data'
 import { Heading, Label, Fade } from './Heading'
 import { Button } from './Button'
 import { Calendar, Phone, Pin } from './Icons'
+import MapConsent from './MapConsent'
 
 export default function Infos() {
   // Calculé côté client pour toujours refléter le jour du visiteur. getDay() : 0 = dimanche.
@@ -12,7 +13,7 @@ export default function Infos() {
   return (
     <section className="section infos" id="infos">
       <div className="container">
-        <Label index="03">Infos pratiques</Label>
+        <Label index={sectionIndex('infos')}>Infos pratiques</Label>
         <Heading className="h2 h2--xl">
           Nous trouver, <em>nous joindre.</em>
         </Heading>
@@ -20,7 +21,10 @@ export default function Infos() {
         <div className="infos__grid">
           <Fade className="infos__col infos__booking">
             <h3 className="h3">Rendez-vous</h3>
-            <p className="muted">Réservez en ligne en quelques clics, ou appelez le secrétariat.</p>
+            <p className="muted">
+              Réservez en ligne en quelques clics, ou appelez le secrétariat. Les consultations se font uniquement sur
+              rendez-vous.
+            </p>
             <div className="infos__buttons">
               <Button href={CABINET.doctolib} external magnetic icon={<Calendar />}>
                 Réserver sur Doctolib
@@ -52,12 +56,7 @@ export default function Infos() {
 
           <Fade className="infos__col infos__map" delay={0.35}>
             <div className="infos__mapframe">
-              <iframe
-                title="Plan d’accès au cabinet"
-                src={CABINET.mapsEmbed}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
+              <MapConsent />
             </div>
             <a className="infos__address" href={CABINET.maps} target="_blank" rel="noreferrer">
               <Pin />

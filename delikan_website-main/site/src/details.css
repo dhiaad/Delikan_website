@@ -1,0 +1,126 @@
+/* ==========================================================================
+   Détails : nom du cabinet dans la barre, carrousel de la visite, ornement entre deux parties
+   ========================================================================== */
+
+/* Nom au centre de la barre : visible quand les pages sont sur la seconde rangée. */
+.nav__name {
+  display: none;
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: center;
+  font-family: var(--serif);
+  font-size: clamp(1.05rem, 3.6vw, 1.45rem);
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  color: var(--white);
+}
+.nav__name span {
+  color: var(--gold);
+}
+@media (max-width: 1240px) {
+  .nav__name {
+    display: block;
+  }
+  .logo__text {
+    display: none;
+  }
+}
+@media (max-width: 520px) {
+  .nav__inner {
+    gap: 12px;
+  }
+  .nav__name {
+    min-width: 0;
+    font-size: clamp(0.82rem, 4vw, 1.05rem);
+    letter-spacing: 0.12em;
+  }
+  /* Sur petit téléphone, le bouton menu garde seulement son icône. */
+  .nav__menu-label {
+    display: none;
+  }
+}
+
+/* Visite : flèches et glisser à la souris quand les photos défilent en carrousel. */
+.visite__nav {
+  display: none;
+  gap: 10px;
+}
+.visite__nav button {
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(191, 159, 108, 0.5);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--gold);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition:
+    background 0.3s,
+    color 0.3s,
+    opacity 0.3s;
+}
+.visite__nav button:hover:not(:disabled) {
+  background: var(--gold);
+  color: var(--ink);
+}
+.visite__nav button:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+.visite__track {
+  cursor: grab;
+}
+.visite__track.is-dragging {
+  cursor: grabbing;
+  scroll-snap-type: none;
+  user-select: none;
+}
+.visite__track.is-dragging * {
+  pointer-events: none;
+}
+@media (max-width: 899px), (prefers-reduced-motion: reduce) {
+  .visite__nav {
+    display: flex;
+  }
+}
+@media (min-width: 900px) and (prefers-reduced-motion: no-preference) {
+  .visite__track {
+    cursor: auto;
+  }
+}
+
+/* Engagements → Première visite : moins de vide, et un ornement pour lier les deux parties. */
+#engagements {
+  padding-bottom: clamp(40px, 5vw, 70px);
+}
+#etapes {
+  padding-top: clamp(30px, 4vw, 56px);
+}
+.ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  width: min(420px, 70%);
+  margin: 0 auto clamp(50px, 6vw, 80px);
+  color: var(--gold);
+}
+.ornament span {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold));
+}
+.ornament span:last-child {
+  background: linear-gradient(90deg, var(--gold), transparent);
+}
+.ornament svg {
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 6px rgba(191, 159, 108, 0.45));
+}
+
+/* Portrait du praticien : le visage reste dans le cadre, quel que soit le format. */
+.docteur__portrait img {
+  object-position: center 18%;
+}

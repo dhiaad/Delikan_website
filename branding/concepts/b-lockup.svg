@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 256" width="760" height="256">
+  <rect width="760" height="256" fill="#15120f" />
+  <g transform="translate(40 48) scale(0.625)" fill="#c2a06b">
+    <path d="M 70 54 A 13 13 0 0 1 96 54 L 96 184 L 91 207 A 8 8 0 0 1 75 207 L 70 184 Z" />
+    <path d="M 108 41 A 87 87 0 0 1 108 215 L 108 189 A 61 61 0 0 0 108 67 Z" />
+  </g>
+  <text x="222" y="146" font-family="'Segoe UI', Arial, sans-serif" font-weight="300" font-size="62" letter-spacing="22" fill="#f3ece0">DELIKAN</text>
+  <rect x="224" y="166" width="40" height="2" fill="#c2a06b" />
+  <text x="278" y="172" font-family="'Segoe UI', Arial, sans-serif" font-weight="400" font-size="11" letter-spacing="4" fill="#bfb3a2">IMPLANTOLOGIE · CHIRURGIE ORALE</text>
+</svg>

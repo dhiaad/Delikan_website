@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 256" width="760" height="256">
+  <!-- C — La Maison : mot-symbole façon maison de couture. Le I est dessiné, surmonté du losange d'or. -->
+  <rect width="760" height="256" fill="#f6f1e8" />
+  <text x="364" y="150" text-anchor="end" font-family="'Bodoni MT', Didot, serif" font-size="96" letter-spacing="16" fill="#15120f">DEL</text>
+  <g>
+    <path d="M 380 52 L 389 64 L 380 76 L 371 64 Z" fill="#c2a06b" />
+    <rect x="374" y="85" width="12" height="65" fill="#15120f" />
+    <rect x="364" y="85" width="32" height="3.5" fill="#15120f" />
+    <rect x="364" y="146.5" width="32" height="3.5" fill="#15120f" />
+  </g>
+  <text x="412" y="150" font-family="'Bodoni MT', Didot, serif" font-size="96" letter-spacing="16" fill="#15120f">KAN</text>
+  <line x1="200" y1="182" x2="560" y2="182" stroke="#c2a06b" stroke-width="1" />
+  <text x="380" y="206" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-weight="400" font-size="11.5" letter-spacing="6" fill="#6b6259">IMPLANTOLOGIE &amp; CHIRURGIE ORALE · SAINT-ESTÈVE</text>
+</svg>

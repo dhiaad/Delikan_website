@@ -44,3 +44,9 @@ export function scrollToId(id) {
   else if (id === 'top') window.scrollTo({ top: 0, behavior: prefersReducedMotion() ? 'auto' : 'smooth' })
   else target.scrollIntoView({ behavior: prefersReducedMotion() ? 'auto' : 'smooth' })
 }
+
+// Remonte en haut sans animation (changement de page).
+export function scrollToTopNow() {
+  if (lenis) lenis.scrollTo(0, { immediate: true, force: true })
+  window.scrollTo(0, 0)
+}
