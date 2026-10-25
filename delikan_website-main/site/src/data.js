@@ -193,6 +193,7 @@ export const PHOTOS = {
     tips: ['Coussins et magazines bien rangés', 'Lumière du jour'],
   },
   'soins-2': {
+    ready: true,
     title: 'La salle de soins',
     format: 'Vertical 4:5',
     brief: 'Le fauteuil principal en position d’accueil, plateau propre, scialytique éteint, vu de trois quarts.',
